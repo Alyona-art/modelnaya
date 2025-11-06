@@ -1,0 +1,345 @@
+{
+    "tech-uturn": {
+        "title": "Разворот в разрыве двух сплошных линий (технический разрыв)",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/13",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/48",
+                "title": "Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/49?t=48",
+                "title": "Видео 3"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/131?t=229",
+                "title": "Ошибка - пропускаем встречные машины"
+            }
+        ]
+    },
+    "tech-uturn-tram": {
+        "title": "Разворот через трамвайные пути ⁣⁣ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/64",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "akt-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/12?t=0",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "leb-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Лебедева",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/12?t=46",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "akt-kul-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Актайская и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/16?t=0",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "kul-akt-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Кулагина и Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/16?t=55",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/71",
+                "title": "Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/127",
+                "title": "Ошибка - разворот вместо поворота налево"
+            }
+        ]
+    },
+    "kul-akt-uturn": {
+        "title": "Разворот на перекрёстке ул. Кулагина и Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/16?t=125",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/127",
+                "title": "Ошибка - разворот вместо поворота налево"
+            }
+        ]
+    },
+    "tech-mod-l-turn-1": {
+        "title": "Левый поворот на перекрёстке ул. Техническая и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/17?t=0",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/54",
+                "title": "Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/87",
+                "title": "Наглядно на доске"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/130",
+                "title": "Ошибка - разворот вместо поворота налево"
+            }
+        ]
+    },
+    "tech-mod-uturn-1": {
+        "title": "Разворот на перекрёстке ул. Техническая и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/17?t=83",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/130",
+                "title": "Ошибка - разворот вместо поворота налево"
+            }
+        ]
+    },
+    "mod-tech-l-turn-1": {
+        "title": "Левый поворот на перекрёстке ул. Модельная и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/17?t=242",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "mod-tech-l-turn-2": {
+        "title": "Левый поворот на перекрёстке ул. Модельная и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/131?t=443",
+                "title": "Ошибка - выезд за пределы перекрёстка"
+            }
+        ]
+    },
+    "akt-mod-uturn": {
+        "title": "Разворот на перекрёстке ул. Актайская и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/46",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "mod-akt-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Модельная и Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/58",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tech-kul-uturn-1": {
+        "title": "Разворот на перекрёстке ул. Техническая и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/49?t=0",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/116?t=0",
+                "title": "Видео 2"
+            }
+        ]
+    },
+    "tech-kul-uturn-2": {
+        "title": "Разворот на перекрёстке ул. Техническая и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/57?t=0",
+                "title": "Если светофор неисправен"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=41",
+                "title": "Видео из проезда всего маршрута"
+            }
+        ]
+    },
+    "kul-tech-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Кулагина и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/50?t=0",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/73",
+                "title": "Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/57?t=43",
+                "title": "Если светофор неисправен"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/131?t=163",
+                "title": "Ошибка - заезд между полосами"
+            }
+        ]
+    },
+    "tech-kul-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Техническая и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/55",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tech-kul-straight": {
+        "title": "Проезд прямо на перекрёстке ул. Техническая и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/96",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "kul-tech-uturn": {
+        "title": "Разворот на перекрёстке ул. Кулагина и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/116?t=60",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tech-max": {
+        "title": "Разгон до максимальной скорости на ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/50?t=107",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tech-tul-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Техническая и Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/51",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tul-ava-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Тульская и Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/53",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "mod-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории на ул. Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/62",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tul-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории на ул. Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/63",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "tech-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории на ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/126",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "ava-stop-park": {
+        "title": "Задание остановки на ул. Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/92",
+                "title": "Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/131?t=114",
+                "title": "Ошибка - остановка на проезжей части запрещена"
+            }
+        ]
+    },
+    "tech-stop": {
+        "title": "Выполнение остановки на проезжей части на ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/93",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "ava-stop": {
+        "title": "Задание остановки на проезжей части на ул. Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/115",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "garage": {
+        "title": "Гараж",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/65",
+                "title": "Видео 1"
+            }
+        ]
+    },
+    "parallel": {
+        "title": "Параллельная парковка",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/111",
+                "title": "Ошибка на параллельной парковке"
+            }
+        ]
+    },
+    "tech-prep": {
+        "title": "Объезд препятствия после ЖД переезда на ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/131?t=210",
+                "title": "Видео 1"
+            }
+        ]
+    }
+}

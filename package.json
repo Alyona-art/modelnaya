@@ -1,0 +1,52 @@
+{
+    "name": "modelnaya-map",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://yourusername.github.io/modelnaya",
+    "dependencies": {
+        "@floating-ui/react": "^0.27.16",
+        "@react-pdf/renderer": "^4.3.1",
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^13.3.0",
+        "@testing-library/user-event": "^13.5.0",
+        "file-saver": "^2.0.5",
+        "html2canvas": "^1.4.1",
+        "jspdf": "^3.0.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "^5.0.1",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.21",
+        "gh-pages": "^6.3.0",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^3.4.18"
+    }
+}
