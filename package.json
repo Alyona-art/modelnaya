@@ -2,7 +2,7 @@
     "name": "modelnaya-map",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://yourusername.github.io/modelnaya",
+    "homepage": "https://alyona-art.github.io/modelnaya",
     "dependencies": {
         "@floating-ui/react": "^0.27.16",
         "@react-pdf/renderer": "^4.3.1",
