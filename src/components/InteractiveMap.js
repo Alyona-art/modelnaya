@@ -142,8 +142,10 @@ const InteractiveMap = () => {
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
     
+    const isMobile = window.innerWidth < 768;
+    const maxScale = isMobile ? 15 : 5;
     const scaleFactor = e.deltaY > 0 ? 0.9 : 1.1;
-    const newScale = Math.max(0.1, Math.min(5, transform.scale * scaleFactor));
+    const newScale = Math.max(0.1, Math.min(maxScale, transform.scale * scaleFactor));
     
     setTransform(prev => ({
       x: mouseX - (mouseX - prev.x) * (newScale / prev.scale),
@@ -195,7 +197,8 @@ const InteractiveMap = () => {
       
       if (lastTouchDistance && lastTouchCenter) {
         const scaleFactor = distance / lastTouchDistance;
-        const newScale = Math.max(0.1, Math.min(5, transform.scale * scaleFactor));
+        const maxScale = 15; // Higher max zoom for mobile touch
+        const newScale = Math.max(0.1, Math.min(maxScale, transform.scale * scaleFactor));
         const touchCenterX = center.x - rect.left;
         const touchCenterY = center.y - rect.top;
         

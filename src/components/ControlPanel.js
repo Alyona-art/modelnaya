@@ -5,7 +5,7 @@ import TurnsToggle from './TurnsToggle';
 
 const ControlPanel = ({ layers, onToggle, svgRef }) => {
   return (
-    <div className="absolute bottom-0 left-0 right-0 md:bottom-5 md:left-5 md:right-auto bg-white/95 border-t md:border border-gray-200 md:rounded-lg md:p-4 shadow-lg backdrop-blur-sm z-50 md:min-w-48">
+    <div className="absolute bottom-0 left-0 right-0 md:bottom-5 md:left-5 md:right-auto bg-white/95 border-t md:border border-gray-200 md:rounded-lg md:p-4 shadow-lg backdrop-blur-sm z-50 md:min-w-48 max-h-[calc(100vh-1rem)] md:max-h-none overflow-y-auto md:overflow-visible">
       {/* Mobile: Compact horizontal layout */}
         <div className="md:hidden flex gap-2">
             <LayerControls layers={layers} onToggle={onToggle} />

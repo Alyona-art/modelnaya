@@ -75,7 +75,7 @@ const ExportSection = ({ svgRef }) => {
         
         const link = document.createElement('a');
         link.download = 'Modelnaya.jpg';
-        link.href = canvas.toDataURL();
+        link.href = canvas.toDataURL('image/jpeg', 0.85);
         link.click();
         } catch (error) {
         console.error('Error exporting JPG:', error);
