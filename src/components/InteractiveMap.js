@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import LayerControls from './LayerControls';
+import ControlPanel from './ControlPanel';
 import VideoPopup from './VideoPopup';
 import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya.svg';
 import VideoData from '../assets/VideoData.json';
@@ -20,6 +20,8 @@ const InteractiveMap = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
   const [interactiveElements, setInteractiveElements] = useState([]);
+  const [lastTouchDistance, setLastTouchDistance] = useState(null);
+  const [lastTouchCenter, setLastTouchCenter] = useState(null);
   
   const svgRef = useRef(null);
   const containerRef = useRef(null);
@@ -150,6 +152,82 @@ const InteractiveMap = () => {
     }));
   }, [transform.scale]);
 
+  const getTouchDistance = (touch1, touch2) => {
+    const dx = touch2.clientX - touch1.clientX;
+    const dy = touch2.clientY - touch1.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  };
+
+  const getTouchCenter = (touch1, touch2) => {
+    return {
+      x: (touch1.clientX + touch2.clientX) / 2,
+      y: (touch1.clientY + touch2.clientY) / 2
+    };
+  };
+
+  const handleTouchStart = useCallback((e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const distance = getTouchDistance(e.touches[0], e.touches[1]);
+      const center = getTouchCenter(e.touches[0], e.touches[1]);
+      const rect = containerRef.current.getBoundingClientRect();
+      
+      setLastTouchDistance(distance);
+      setLastTouchCenter({
+        x: center.x - rect.left,
+        y: center.y - rect.top
+      });
+    } else if (e.touches.length === 1) {
+      const touch = e.touches[0];
+      if (!touch.target.closest('.interactive-element')) {
+        setIsDragging(true);
+        setDragStart({ x: touch.clientX - transform.x, y: touch.clientY - transform.y });
+      }
+    }
+  }, [transform.x, transform.y]);
+
+  const handleTouchMove = useCallback((e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+      const distance = getTouchDistance(e.touches[0], e.touches[1]);
+      const center = getTouchCenter(e.touches[0], e.touches[1]);
+      const rect = containerRef.current.getBoundingClientRect();
+      
+      if (lastTouchDistance && lastTouchCenter) {
+        const scaleFactor = distance / lastTouchDistance;
+        const newScale = Math.max(0.1, Math.min(5, transform.scale * scaleFactor));
+        const touchCenterX = center.x - rect.left;
+        const touchCenterY = center.y - rect.top;
+        
+        setTransform(prev => ({
+          x: touchCenterX - (touchCenterX - prev.x) * (newScale / prev.scale),
+          y: touchCenterY - (touchCenterY - prev.y) * (newScale / prev.scale),
+          scale: newScale
+        }));
+        
+        setLastTouchDistance(distance);
+        setLastTouchCenter({
+          x: touchCenterX,
+          y: touchCenterY
+        });
+      }
+    } else if (e.touches.length === 1 && isDragging) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      setTransform(prev => ({
+        ...prev,
+        x: touch.clientX - dragStart.x,
+        y: touch.clientY - dragStart.y
+      }));
+    }
+  }, [lastTouchDistance, lastTouchCenter, transform.scale, isDragging, dragStart]);
+
+  const handleTouchEnd = useCallback(() => {
+    setIsDragging(false);
+    setLastTouchDistance(null);
+    setLastTouchCenter(null);
+  }, []);
+
 
   // Setup and cleanup effects
   useEffect(() => {
@@ -158,14 +236,20 @@ const InteractiveMap = () => {
       container.addEventListener('mousemove', handleMouseMove);
       container.addEventListener('mouseup', handleMouseUp);
       container.addEventListener('wheel', handleWheel);
+      container.addEventListener('touchstart', handleTouchStart, { passive: false });
+      container.addEventListener('touchmove', handleTouchMove, { passive: false });
+      container.addEventListener('touchend', handleTouchEnd);
       
       return () => {
         container.removeEventListener('mousemove', handleMouseMove);
         container.removeEventListener('mouseup', handleMouseUp);
         container.removeEventListener('wheel', handleWheel);
+        container.removeEventListener('touchstart', handleTouchStart);
+        container.removeEventListener('touchmove', handleTouchMove);
+        container.removeEventListener('touchend', handleTouchEnd);
       };
     }
-  }, [handleMouseMove, handleMouseUp, handleWheel]);
+  }, [handleMouseMove, handleMouseUp, handleWheel, handleTouchStart, handleTouchMove, handleTouchEnd]);
 
   useEffect(() => {
     if (svgRef.current) {
@@ -197,7 +281,7 @@ const InteractiveMap = () => {
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <LayerControls 
+      <ControlPanel 
         layers={layers} 
         onToggle={handleLayerToggle}
         svgRef={svgRef}
@@ -207,7 +291,7 @@ const InteractiveMap = () => {
         ref={containerRef}
         className="w-full h-full relative bg-gray-50"
         onMouseDown={handleMouseDown}
-        style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+        style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'none' }}
       >
         <ModelnayaSvg
           ref={svgRef}
