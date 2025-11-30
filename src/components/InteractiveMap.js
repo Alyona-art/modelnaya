@@ -110,7 +110,7 @@ const InteractiveMap = () => {
     if (svgRef.current) {
       interactiveElements.forEach(element => {
         if (element) {          
-          element.style.strokeWidth = '12px';
+          element.style.strokeWidth = '';
           element.style.pointerEvents = 'all';
         }
       });
