@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { IoClose, IoTimeOutline  } from "react-icons/io5";
 import {
   arrow,
   autoUpdate,
@@ -84,38 +85,39 @@ const VideoPopup = ({
           {...getFloatingProps()}
           className="z-50 flex max-w-md flex-col rounded-xl bg-white p-4 text-sm text-gray-800 shadow-xl border border-gray-200"
         >
-          <div className="flex flex-row justify-between gap-2">
+          <div className="flex flex-row items-start justify-between gap-2 mb-2">
             <div className="text-bold flex whitespace-pre-wrap text-xl [overflow-wrap:anywhere]">
-              <span className="font-medium">{popup.data.title}</span>
+              <span className="font-medium text-base">{popup.data.title}</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center rounded-full hover:bg-gray-100 p-1 transition-colors"
+              className="flex items-center justify-center rounded-full hover:bg-gray-100 p-2 transition-colors"
             >
-              <span className="text-xl font-bold text-gray-500 hover:text-gray-700">×</span>
+              <IoClose className='w-4 h-4'/>
             </button>
           </div>
 
           <div className="flex flex-col gap-2">
             {popup.data.videos.map((video, index) => (
-              <div key={index} className="flex flex-row gap-2">
-                <div className="w-6">
-                  <span className="text-2xl">▶️</span>
-                </div>
+              <button
+              onClick={() => handleVideoClick(video.url)}>
+              <div key={index} className="flex flex-row items-center gap-1">
+                  <span className="text-xl">▶️</span>
                 <div className="flex w-full flex-col">
-                  <button
-                    onClick={() => handleVideoClick(video.url)}
-                    className="text-left text-blue-600 hover:text-blue-800 hover:underline py-1 transition-colors"
+                  <div
+                    className="text-left text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                   >
-                    {video.title}
-                  </button>
-                  {video.timecode && (
-                    <span className="text-xs text-gray-500 mt-1 font-mono">
-                      Time: {video.timecode}
+                    {`${video.title != undefined ? video.title : "Видео"} ${video.date!=undefined ? `(${video.date})`: ``}`}
+                  </div>
+                  {video.time && (
+                    <span className="flex flex-row items-center gap-1 text-xs text-gray-500 font-mono">
+                      <IoTimeOutline /> 
+                      {video.time}
                     </span>
                   )}
                 </div>
               </div>
+              </button>
             ))}
           </div>
 

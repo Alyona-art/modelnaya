@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ControlPanel from './ControlPanel';
 import VideoPopup from './VideoPopup';
-import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya.svg';
+import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya-new-map.svg';
 import VideoData from '../assets/VideoData.json';
 
 const InteractiveMap = () => {
@@ -10,7 +10,9 @@ const InteractiveMap = () => {
     speed: true,
     transport: true,
     pedestrian: true,
-    showTurns: true,
+    showLeftTurns: true,
+    showRightTurns: true,
+    showUTurns: true,
   });
   
   const [popup, setPopup] = useState(null);
@@ -260,7 +262,8 @@ const InteractiveMap = () => {
       const speedGroup = svgRef.current.querySelector('#speed');
       const transportGroup = svgRef.current.querySelector('#transport');
       const pedestrianGroup = svgRef.current.querySelector('#pedestrian');
-      const turnsGroup = svgRef.current.querySelector('#turns');
+      const leftTurnsGroup = svgRef.current.querySelector('#l-turns');
+      const rightTurnsGroup = svgRef.current.querySelector('#r-turns');
       const uTurnsGroup = svgRef.current.querySelector('#u-turns');
       
       if (stopsGroup) {
@@ -275,9 +278,14 @@ const InteractiveMap = () => {
       if (pedestrianGroup) {
         pedestrianGroup.classList.toggle('hidden', !layers.pedestrian);
       }
-      if (turnsGroup && uTurnsGroup) {
-        turnsGroup.classList.toggle('hidden', layers.showTurns);
-        uTurnsGroup.classList.toggle('hidden', !layers.showTurns);
+      if (leftTurnsGroup) {
+        leftTurnsGroup.classList.toggle('hidden', !layers.showLeftTurns);
+      }
+      if (rightTurnsGroup) {
+        rightTurnsGroup.classList.toggle('hidden', !layers.showRightTurns);
+      }
+      if (uTurnsGroup) {
+        uTurnsGroup.classList.toggle('hidden', !layers.showUTurns);
       }
     }
   }, [layers]);

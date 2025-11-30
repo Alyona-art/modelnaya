@@ -19,10 +19,8 @@ const CustomToggle = ({text, id, checked, onToggle, icon}) => {
             ></div>
           </label>
         </div>
-        <label for={id} class="flex gap-2 cursor-pointer">
-        {icon && (
-          <img src={icon} alt="" class="w-5 h-5 cursor-pointer" />
-        )}
+        <label for={id} class="flex gap-1 cursor-pointer">
+        {icon}
         <div class="text-slate-600 text-sm cursor-pointer hidden md:block">{text}</div>
           
         </label>

@@ -1,35 +1,14 @@
 import React from 'react';
+import CustomToggle from './CustomToggle';
+import {MdOutlineTurnLeft, MdOutlineTurnRight , MdOutlineUTurnLeft } from "react-icons/md";
 
-const TurnsToggle = ({ isShowTurns, showTurns }) => {
+const TurnsToggle = ({ showLeftTurns, showRightTurns, showUTurns, onToggleLeft, onToggleRight, onToggleU }) => {
   return (
-    <div className="inline-flex overflow-hidden border border-gray-200 rounded-3xl">
-          <label htmlFor="u-turns" className="cursor-pointer">
-            <input 
-              type="radio"
-              id="u-turns" 
-              name="turns-type"
-              className="sr-only" 
-              checked={isShowTurns} 
-              onChange={() => !isShowTurns && showTurns()}
-            />
-            <span className={`relative inline-flex items-center h-full py-2 px-4 text-sm ${isShowTurns ? 'bg-black text-white' : 'bg-white text-gray-700'}`}>
-              <span>Развороты</span>
-            </span>
-          </label>
-          <label htmlFor="turns" className="cursor-pointer">
-            <input 
-              type="radio"
-              id="turns" 
-              name="turns-type"
-              className="sr-only" 
-              checked={!isShowTurns} 
-              onChange={() => isShowTurns && showTurns()}
-            />
-            <span className={`relative inline-flex items-center h-full py-2 px-4 text-sm ${!isShowTurns ? 'bg-black text-white' : 'bg-white text-gray-700'}`}>
-              <span>Повороты</span>
-            </span>
-          </label>
-        </div>
+    <div className="grow p-4 md:p-0 flex flex-col gap-4 md:pb-4 justify-center items-center md:items-start">
+      <CustomToggle text="Левые повороты" icon={<MdOutlineTurnLeft/>} id="left-turns" checked={showLeftTurns} onToggle={onToggleLeft} />
+      <CustomToggle text="Правые повороты" icon={<MdOutlineTurnRight/>} id="right-turns" checked={showRightTurns} onToggle={onToggleRight} />
+      <CustomToggle text="Развороты" icon={<MdOutlineUTurnLeft/>} id="u-turns" checked={showUTurns} onToggle={onToggleU} />
+    </div>
   );
 };
 

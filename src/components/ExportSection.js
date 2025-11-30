@@ -5,7 +5,7 @@ import {ReactPDF, pdf} from '@react-pdf/renderer';
 import { Document, Page, PDFDownloadLink, Text, View, StyleSheet } from '@react-pdf/renderer';
 import { parse } from 'svg-parser';
 import { saveAs } from 'file-saver';
-import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya.svg';
+import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya-new-map.svg';
 
 const ExportSection = ({ svgRef }) => {
     const [isExportingJPG, setIsExportingJPG] = useState(false);

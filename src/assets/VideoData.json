@@ -4,19 +4,87 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/13",
-                "title": "Видео 1"
+                "date": "14.12.24"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/48",
-                "title": "Видео 2"
+                "date": "02.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/49?t=48",
-                "title": "Видео 3"
+                "date": "03.01.25",
+                "time": "0:48"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/131?t=229",
-                "title": "Ошибка - пропускаем встречные машины"
+                "title": "Ошибка - пропускаем встречные машины",
+                "date": "25.02.25",
+                "time": "3:49"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/158",
+                "date": "12.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/162",
+                "date": "13.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/170",
+                "date": "16.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/201",
+                "date": "28.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/393",
+                "title": "Разворот с заездом на прилегающую территорию вместо разворота на проезжей части",
+                "date": "7.05.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=2060",
+                "title": "Видео из проезда всего маршрута",
+                "time": "34:20",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/545",
+                "date": "08.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=310",
+                "title": "Видео из проезда всего маршрута",
+                "time": "5:10",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/744",
+                "date": "28.09.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=170",
+                "title": "Места для разворота - Видео из проезда всего маршрута",
+                "time": "2:50",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=398",
+                "title": "Видео из проезда всего маршрута",
+                "time": "6:38",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=803",
+                "title": "Видео из проезда всего маршрута",
+                "time": "13:23",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1460",
+                "title": "Видео из проезда всего маршрута",
+                "time": "24:20",
+                "date": "10.11.25"
             }
         ]
     },
@@ -25,7 +93,27 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/64",
-                "title": "Видео 1"
+                "date": "14.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/133",
+                "title": "Внимательно, когда слева объезжает машина"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/196",
+                "date": "27.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3350",
+                "title": "Видео из проезда всего маршрута",
+                "time": "55:50",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=3247",
+                "title": "Видео из проезда всего маршрута",
+                "time": "54:07",
+                "date": "10.11.25"
             }
         ]
     },
@@ -34,7 +122,19 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/12?t=0",
-                "title": "Видео 1"
+                "date": "14.12.24"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1660",
+                "title": "Видео из проезда всего маршрута",
+                "time": "27:40",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2882",
+                "title": "Видео из проезда всего маршрута",
+                "time": "48:02",
+                "date": "10.11.25"
             }
         ]
     },
@@ -43,7 +143,18 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/12?t=46",
-                "title": "Видео 1"
+                "date": "14.12.24",
+                "time": "0:46"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/157",
+                "date": "11.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=4215",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:10:15",
+                "date": "06.07.25"
             }
         ]
     },
@@ -52,7 +163,42 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/16?t=0",
-                "title": "Видео 1"
+                "date": "15.12.24"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=285",
+                "title": "Видео из проезда всего маршрута",
+                "time": "4:45",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1288",
+                "title": "Видео из проезда всего маршрута",
+                "time": "21:28",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "akt-kul-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Актайская и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/16?t=125",
+                "title": "Перекрёсток до установки светофора",
+                "time": "2:05",
+                "date": "15.12.24"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3200",
+                "title": "Видео из проезда всего маршрута",
+                "time": "53:20",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1927",
+                "title": "Видео из проезда всего маршрута",
+                "time": "32:07",
+                "date": "04.11.25"
             }
         ]
     },
@@ -61,11 +207,12 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/16?t=55",
-                "title": "Видео 1"
+                "date": "15.12.24",
+                "time": "0:55"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/71",
-                "title": "Видео 2"
+                "date": "20.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/127",
@@ -73,16 +220,65 @@
             }
         ]
     },
+    "akt-kul-uturn": {
+        "title": "Разворот на перекрёстке ул. Актайская и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/686",
+                "date": "07.09.25"
+            }
+        ]
+    },
     "kul-akt-uturn": {
         "title": "Разворот на перекрёстке ул. Кулагина и Актайская",
         "videos": [
             {
-                "url": "https://t.me/Andreiavtoinstryktor/16?t=125",
-                "title": "Видео 1"
-            },
-            {
                 "url": "https://t.me/Andreiavtoinstryktor/127",
                 "title": "Ошибка - разворот вместо поворота налево"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=765",
+                "title": "Видео из проезда всего маршрута",
+                "time": "12:45",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/637",
+                "date": "25.08.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/873?t=106",
+                "date": "05.11.25",
+                "time": "1:46"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=17",
+                "title": "Видео из проезда всего маршрута",
+                "time": "00:17",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "kul-akt-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Кулагина и Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=1849",
+                "title": "Видео из проезда всего маршрута",
+                "time": "30:49",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1482",
+                "title": "Видео из проезда всего маршрута",
+                "time": "24:42",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2517",
+                "title": "Видео из проезда всего маршрута",
+                "time": "41:57",
+                "date": "10.11.25"
             }
         ]
     },
@@ -91,11 +287,11 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/17?t=0",
-                "title": "Видео 1"
+                "date": "15.12.24"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/54",
-                "title": "Видео 2"
+                "date": "08.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/87",
@@ -104,6 +300,85 @@
             {
                 "url": "https://t.me/Andreiavtoinstryktor/130",
                 "title": "Ошибка - разворот вместо поворота налево"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/144",
+                "title": "Объяснение поворотов и разворотов на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/194?t=0",
+                "date": "26.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/392",
+                "title": "Не торопиться при выезде с перекрёстка"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/478",
+                "title": "Объяснение перекрёстка на бумаге",
+                "date": "07.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3725",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:02:05",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2340",
+                "title": "Видео из проезда всего маршрута",
+                "time": "39:00",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/673",
+                "title": "Следить за пешеходами после поворота, чтобы не перегородить дорогу"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/761",
+                "date": "05.10.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/762",
+                "title": "Объяснение перекрёстка на бумаге",
+                "date": "05.10.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/763",
+                "date": "06.10.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2570",
+                "title": "Видео из проезда всего маршрута",
+                "time": "42:50",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=412",
+                "title": "Видео из проезда всего маршрута",
+                "time": "6:52",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "tech-mod-l-turn-2": {
+        "title": "Левый поворот на перекрёстке ул. Техническая и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3424",
+                "title": "Видео из проезда всего маршрута",
+                "time": "57:04",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/762",
+                "title": "Объяснение перекрёстка на бумаге"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1138",
+                "title": "Видео из проезда всего маршрута",
+                "time": "18:58",
+                "date": "10.11.25"
             }
         ]
     },
@@ -112,11 +387,60 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/17?t=83",
-                "title": "Видео 1"
+                "date": "15.12.24",
+                "time": "1:23"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/130",
                 "title": "Ошибка - разворот вместо поворота налево"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/144",
+                "title": "Объяснение поворотов и разворотов на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/478",
+                "title": "Объяснение перекрёстка на бумаге",
+                "date": "07.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=4061",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1.07:41",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/762",
+                "title": "Объяснение перекрёстка на бумаге",
+                "date": "05.10.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=192",
+                "title": "Видео из проезда всего маршрута",
+                "time": "3:12",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "tech-mod-r-turn-1": {
+        "title": "Правый поворот на перекрёстке ул. Техническая и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=3360",
+                "title": "Видео из проезда всего маршрута",
+                "time": "56:00",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "mod-tech-r-turn-1": {
+        "title": "Правый поворот на перекрёстке ул. Модельная и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=0",
+                "title": "Видео из проезда всего маршрута",
+                "time": "0:00",
+                "date": "04.11.25"
             }
         ]
     },
@@ -125,7 +449,38 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/17?t=242",
-                "title": "Видео 1"
+                "date": "15.12.24",
+                "time": "4:02"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/144?t=144",
+                "date": "05.03.25",
+                "time": "2:24"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/194?t=59",
+                "date": "26.03.25",
+                "time": "0:59"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/478",
+                "title": "Объяснение перекрёстка на бумаге - Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3696",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1.01:36",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/762",
+                "title": "Объяснение перекрёстка на бумаге - Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2404",
+                "title": "Видео из проезда всего маршрута",
+                "time": "40:04",
+                "date": "04.11.25"
             }
         ]
     },
@@ -134,7 +489,32 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/131?t=443",
-                "title": "Ошибка - выезд за пределы перекрёстка"
+                "title": "Ошибка - выезд за пределы перекрёстка",
+                "time": "7:23"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/144",
+                "title": "Объяснение поворотов и разворотов на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/478",
+                "title": "Объяснение перекрёстка на бумаге - Видео 1"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3250",
+                "title": "Видео из проезда всего маршрута",
+                "time": "54:10",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/762",
+                "title": "Объяснение перекрёстка на бумаге - Видео 2"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=612",
+                "title": "Видео из проезда всего маршрута",
+                "time": "10:12",
+                "date": "10.11.25"
             }
         ]
     },
@@ -143,7 +523,40 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/46",
-                "title": "Видео 1"
+                "date": "30.12.24"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3060",
+                "title": "Видео из проезда всего маршрута",
+                "time": "51:00",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1578",
+                "title": "Видео из проезда всего маршрута",
+                "time": "26:18",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2664",
+                "title": "Видео из проезда всего маршрута",
+                "time": "44:24",
+                "date": "10.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/917",
+                "date": "25.11.25"
+            }
+        ]
+    },
+    "akt-mod-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Актайская и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2017",
+                "title": "Видео из проезда всего маршрута",
+                "time": "33:37",
+                "date": "13.07.25"
             }
         ]
     },
@@ -152,7 +565,30 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/58",
-                "title": "Видео 1"
+                "date": "10.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1822",
+                "title": "Видео из проезда всего маршрута",
+                "time": "30:22",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "mod-akt-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Модельная и Актайская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=198",
+                "title": "Видео из проезда всего маршрута",
+                "time": "3:18",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1238",
+                "title": "Видео из проезда всего маршрута",
+                "time": "20:38",
+                "date": "10.11.25"
             }
         ]
     },
@@ -161,11 +597,47 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/49?t=0",
-                "title": "Видео 1"
+                "date": "03.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/116?t=0",
-                "title": "Видео 2"
+                "date": "19.02.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/193",
+                "date": "25.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/457",
+                "title": "Объяснение светофора на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/505",
+                "date": "17.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1840",
+                "title": "Видео из проезда всего маршрута",
+                "time": "30:40",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=513",
+                "title": "Видео из проезда всего маршрута",
+                "time": "8:33",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=735",
+                "title": "Видео из проезда всего маршрута",
+                "time": "12:15",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1593",
+                "title": "Видео из проезда всего маршрута",
+                "time": "26:33",
+                "date": "10.11.25"
             }
         ]
     },
@@ -178,7 +650,54 @@
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/540?t=41",
-                "title": "Видео из проезда всего маршрута"
+                "title": "Видео из проезда всего маршрута",
+                "time": "0:41",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=5103",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:25:03",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2264",
+                "title": "Видео из проезда всего маршрута",
+                "time": "37:44",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2446",
+                "title": "Видео из проезда всего маршрута",
+                "time": "40:46",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=356",
+                "title": "Видео из проезда всего маршрута",
+                "time": "5:56",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "tech-kul-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Техническая и Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=863",
+                "title": "Видео из проезда всего маршрута",
+                "time": "14:23",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/873",
+                "date": "05.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2116",
+                "title": "Видео из проезда всего маршрута",
+                "time": "35:16",
+                "date": "10.11.25"
             }
         ]
     },
@@ -187,19 +706,33 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/50?t=0",
-                "title": "Видео 1"
+                "date": "04.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/73",
-                "title": "Видео 2"
+                "date": "21.01.25"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/57?t=43",
-                "title": "Если светофор неисправен"
+                "title": "Если светофор неисправен",
+                "time": "0:43"
             },
             {
                 "url": "https://t.me/Andreiavtoinstryktor/131?t=163",
-                "title": "Ошибка - заезд между полосами"
+                "title": "Ошибка - заезд между полосами",
+                "time": "2:43"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1439",
+                "title": "Видео из проезда всего маршрута",
+                "time": "23:59",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1341",
+                "title": "Видео из проезда всего маршрута",
+                "time": "22:21",
+                "date": "10.11.25"
             }
         ]
     },
@@ -208,7 +741,13 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/55",
-                "title": "Видео 1"
+                "date": "09.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3766",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1.02:46",
+                "date": "13.07.25"
             }
         ]
     },
@@ -217,7 +756,15 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/96",
-                "title": "Видео 1"
+                "date": "06.02.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/378",
+                "date": "30.04.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/427",
+                "date": "19.05.25"
             }
         ]
     },
@@ -226,7 +773,43 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/116?t=60",
-                "title": "Видео 1"
+                "date": "19.02.25",
+                "time": "1:00"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=545",
+                "title": "Видео из проезда всего маршрута",
+                "time": "9:05",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=885",
+                "title": "Видео из проезда всего маршрута",
+                "time": "14:45",
+                "date": "13.07.25"
+            }
+        ]
+    },
+    "kul-tech-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Кулагина и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3628",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:00:28",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3966",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1.06:06",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=119",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:59",
+                "date": "10.11.25"
             }
         ]
     },
@@ -235,7 +818,12 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/50?t=107",
-                "title": "Видео 1"
+                "date": "04.01.25",
+                "time": "1:47"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/442",
+                "date": "23.05.25"
             }
         ]
     },
@@ -244,7 +832,89 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/51",
-                "title": "Видео 1"
+                "date": "05.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/312?t=85",
+                "title": "Левый поворот с объездом препятствия на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=2342",
+                "title": "Видео из проезда всего маршрута",
+                "time": "39:02",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=246",
+                "title": "Видео из проезда всего маршрута",
+                "time": "4:06",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "tech-tul-uturn": {
+        "title": "Разворот на перекрёстке ул. Техническая и Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/299",
+                "title": "Разворот с объездом препятствия на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/312?t=0",
+                "title": "Разворот после и до препятствия на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1704",
+                "title": "Видео из проезда всего маршрута",
+                "time": "28:24",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=1919",
+                "title": "Видео из проезда всего маршрута",
+                "time": "31:59",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "tech-tul-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Техническая и Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/811",
+                "date": "22.10.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=445",
+                "title": "Видео из проезда всего маршрута",
+                "time": "7:25",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "tul-tech-uturn": {
+        "title": "Разворот на перекрёстке ул. Тульская и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/312?t=112",
+                "title": "Разворот при наличии препятствия на перекрёстке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=2585",
+                "title": "Видео из проезда всего маршрута",
+                "time": "43:05",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "tul-tech-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Тульская и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=627",
+                "title": "Видео из проезда всего маршрута",
+                "time": "10:27",
+                "date": "04.11.25"
             }
         ]
     },
@@ -253,34 +923,123 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/53",
-                "title": "Видео 1"
+                "date": "07.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=2648",
+                "title": "Видео из проезда всего маршрута",
+                "time": "44:08",
+                "date": "06.07.25"
             }
         ]
     },
-    "mod-pril-turn": {
-        "title": "Разворот с использованием прилегающей территории на ул. Модельная",
+    "tul-ava-uturn": {
+        "title": "Разворот на перекрёстке ул. Тульская и Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/208",
+                "date": "30.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=2475",
+                "title": "Видео из проезда всего маршрута",
+                "time": "41:15",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "ava-tul-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Авангардная и Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/242",
+                "date": "03.04.25"
+            }
+        ]
+    },
+    "ava-tul-uturn": {
+        "title": "Разворот на перекрёстке ул. Авангардная и Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/331",
+                "date": "19.04.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/482",
+                "date": "10.06.25",
+                "time": "0:14"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1166",
+                "title": "Видео из проезда всего маршрута",
+                "time": "19:26",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=1503",
+                "title": "Видео из проезда всего маршрута",
+                "time": "25:03",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1297",
+                "title": "Видео из проезда всего маршрута",
+                "time": "21:37",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "mod-l-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории слева на ул. Модельная",
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/62",
-                "title": "Видео 1"
+                "date": "12.01.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=3424",
+                "title": "Видео из проезда всего маршрута",
+                "time": "57:04",
+                "date": "10.11.25"
             }
         ]
     },
-    "tul-pril-turn": {
-        "title": "Разворот с использованием прилегающей территории на ул. Тульская",
+    "mod-r-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории справа на ул. Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=4799",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:19:59",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3493",
+                "title": "Видео из проезда всего маршрута",
+                "time": "58:13",
+                "date": "13.07.25"
+            }
+        ]
+    },
+    "tul-l-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории слева на ул. Тульская",
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/63",
-                "title": "Видео 1"
+                "date": "13.01.25"
             }
         ]
     },
-    "tech-pril-turn": {
-        "title": "Разворот с использованием прилегающей территории на ул. Техническая",
+    "tech-l-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории слева на ул. Техническая",
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/126",
-                "title": "Видео 1"
+                "date": "21.02.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/393",
+                "title": "Разворот с заездом на прилегающую территорию вместо разворота на проезжей части"
             }
         ]
     },
@@ -289,11 +1048,27 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/92",
-                "title": "Видео 1"
+                "date": "02.02.25"
             },
             {
-                "url": "https://t.me/Andreiavtoinstryktor/131?t=114",
+                "url": "https://t.me/Andreiavtoinstryktor/498",
+                "date": "16.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=1298",
+                "title": "Видео из проезда всего маршрута",
+                "time": "21:38",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/669",
                 "title": "Ошибка - остановка на проезжей части запрещена"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1136",
+                "title": "Видео из проезда всего маршрута",
+                "time": "18:56",
+                "date": "04.11.25"
             }
         ]
     },
@@ -302,7 +1077,7 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/93",
-                "title": "Видео 1"
+                "date": "03.02.25"
             }
         ]
     },
@@ -311,25 +1086,166 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/115",
-                "title": "Видео 1"
+                "date": "18.02.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=1660",
+                "title": "Видео из проезда всего маршрута",
+                "time": "27:40",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/801",
+                "date": "19.10.25"
             }
         ]
     },
-    "garage": {
-        "title": "Гараж",
+    "kul-stop-1": {
+        "title": "Задание остановки на проезжей части на ул. Кулагина",
         "videos": [
             {
-                "url": "https://t.me/Andreiavtoinstryktor/65",
-                "title": "Видео 1"
+                "url": "https://t.me/Andreiavtoinstryktor/291",
+                "date": "09.04.25"
             }
         ]
     },
-    "parallel": {
-        "title": "Параллельная парковка",
+    "kul-stop-2": {
+        "title": "Задание остановки на проезжей части на ул. Кулагина",
         "videos": [
             {
-                "url": "https://t.me/Andreiavtoinstryktor/111",
-                "title": "Ошибка на параллельной парковке"
+                "url": "https://t.me/Andreiavtoinstryktor/546",
+                "title": "Ошибка - не нужно прижиматься слишком сильно к поребрику"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=1066",
+                "title": "Видео из проезда всего маршрута",
+                "time": "17:46",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2215",
+                "title": "Видео из проезда всего маршрута",
+                "time": "36:55",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "ploshadka-gorod-tech": {
+        "title": "Летняя площадка в городе на ул. Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1550",
+                "title": "Параллельная парковка - Видео из проезда всего маршрута",
+                "time": "25:50",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/569",
+                "date": "16.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/728",
+                "date": "23.09.25"
+            }
+        ]
+    },
+    "ploshadka-gorod-turma": {
+        "title": "Летняя площадка в городе возле тюрьмы",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/514",
+                "title": "Гараж",
+                "date": "23.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/363",
+                "title": "Маневрирование при подъезде к гаражу"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2622",
+                "title": "Гараж - Видео из проезда всего маршрута",
+                "time": "43:42",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/361",
+                "title": "Параллельная парковка - Маневрирование при подъезде и выезде"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/515",
+                "title": "Параллельная парковка",
+                "date": "23.06.25"
+            }
+        ]
+    },
+    "garage-gorod-kul": {
+        "title": "Гараж в городе",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2967",
+                "title": "Видео из проезда всего маршрута",
+                "time": "49:27",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/580",
+                "date": "27.07.25"
+            }
+        ]
+    },
+    "estakada-gorod": {
+        "title": "Эстакада в городе",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/395?t=0",
+                "title": "Эстакада",
+                "date": "08.05.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/395?t=69",
+                "title": "Разворот в ограниченном пространстве",
+                "time": "1:09"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/409",
+                "title": "Выезд с прилегающей территории"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/465",
+                "title": "Эстакада",
+                "date": "02.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=4184",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1.09:44",
+                "date": "13.07.25"
+            }
+        ]
+    },
+    "fab-kam": {
+        "title": "Летняя площадка у Фабрики Камня",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/368",
+                "title": "Выезд с летней площадки у Фабрики Камня"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/479",
+                "title": "Поворот направо на прилегающую территорию"
+            }
+        ]
+    },
+    "ploshadka-gorod-irbis": {
+        "title": "Летняя площадка в городе возле заправки Ирбис",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/564",
+                "title": "Заезд на площадку"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/565",
+                "title": "Выезд с площадки"
             }
         ]
     },
@@ -338,7 +1254,387 @@
         "videos": [
             {
                 "url": "https://t.me/Andreiavtoinstryktor/131?t=210",
-                "title": "Видео 1"
+                "date": "25.02.25",
+                "time": "3:30"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=1990",
+                "title": "Видео из проезда всего маршрута",
+                "time": "33:10",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "ploshadka": {
+        "title": "Площадка",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/141",
+                "title": "Заезд на площадку справа"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/142",
+                "title": "Заезд на площадку слева"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/143",
+                "title": "Выезд с площадки"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/459",
+                "title": "Не прижиматься при выезде с площадки"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/779",
+                "title": "Расположение упражнений"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/780",
+                "title": "Выезд и заезд на площадку"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/861",
+                "title": "Частая траектория движения на площадке"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/416",
+                "title": "Эстакада летом на площадке с разметкой для мотоциклов"
+            }
+        ]
+    },
+    "kul-ava-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Кулагина и Авангардная и разъезд со встречкой",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/156",
+                "date": "10.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/161",
+                "date": "12.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2190",
+                "title": "Видео из проезда всего маршрута",
+                "time": "36:30",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "leb-mod-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Лебедева и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/157?t=57",
+                "date": "11.03.25",
+                "time": "0:57"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=4322",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:12:02",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "mod-leb-straight": {
+        "title": "Поворотники на перекрёстке ул. Модельная и Лебедева",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/463",
+                "date": "01.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3876",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:04:36",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3193",
+                "title": "Видео из проезда всего маршрута",
+                "time": "53:13",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2705",
+                "title": "Видео из проезда всего маршрута",
+                "time": "45:05",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "mod-leb-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Модельная и Лебедева",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=4135",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:08:55",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "mod-leb-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Модельная и Лебедева",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=2473",
+                "title": "Видео из проезда всего маршрута",
+                "time": "41:13",
+                "date": "13.07.25"
+            }
+        ]
+    },
+    "kul-krut-uturn": {
+        "title": "Разворот на перекрёстке ул. Кулагина и Крутовская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/164",
+                "date": "14.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/376",
+                "title": "Если грузовые машины перекрывают разворот"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/396",
+                "title": "Разворот на механике"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3960",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:06:00",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/560?t=3019",
+                "title": "Видео из проезда всего маршрута",
+                "time": "50:19",
+                "date": "13.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/606",
+                "date": "19.08.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/701",
+                "title": "Объяснение разворота на бумаге"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2825",
+                "title": "Видео из проезда всего маршрута",
+                "time": "47:05",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "ava-uturn-1": {
+        "title": "Разворот через трамвайные пути ⁣⁣ул. Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/169",
+                "date": "15.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=3356",
+                "title": "Видео из проезда всего маршрута",
+                "time": "55:56",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2024",
+                "title": "Видео из проезда всего маршрута",
+                "time": "33:44",
+                "date": "04.11.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=2349",
+                "title": "Видео из проезда всего маршрута",
+                "time": "39:09",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "mod-ava-uturn": {
+        "title": "Разворот на перекрёстке ул. Модельная и Авангардная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/171",
+                "date": "17.03.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=1753",
+                "title": "Видео из проезда всего маршрута",
+                "time": "29:13",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "ava-mod-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Авангардная и Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2317",
+                "title": "Видео из проезда всего маршрута",
+                "time": "38:37",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "kul-uturn-oboch": {
+        "title": "Разворот на ул. Кулагина без использования прилегающей территории",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/397",
+                "title": "Разворот с использованием обочины справа"
+            }
+        ]
+    },
+    "kauch-uturn-oboch": {
+        "title": "Разворот на ул. Каучуковая без использования прилегающей территории",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/398",
+                "title": "Разворот с использованием обочины слева"
+            }
+        ]
+    },
+    "kauch-l-pril-turn": {
+        "title": "Разворот с использованием прилегающей территории слева на ул. Каучуковая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=4383",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:13:03",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "kul-nuzh-r-turn": {
+        "title": "Правый поворот на перекрёстке ул. Кулагина и Нужина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/516",
+                "date": "24.06.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=334",
+                "title": "Видео из проезда всего маршрута",
+                "time": "5:34",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "nuzh-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Нужина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=363",
+                "title": "Видео из проезда всего маршрута",
+                "time": "6:03",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "tech-tuk-l-turn": {
+        "title": "Левый поворот на Площади Вахитова",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=5528",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:32:08",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "tim-tech-l-turn": {
+        "title": "Левый поворот на перекрёстке ул. Тимер Юл и Техническая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=6330",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:45:30",
+                "date": "06.07.25"
+            }
+        ]
+    },
+    "tech-tuk-uturn": {
+        "title": "Разворот на Площади Вахитова",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/540?t=6462",
+                "title": "Видео из проезда всего маршрута",
+                "time": "1:47:42",
+                "date": "06.07.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=885",
+                "title": "Видео из проезда всего маршрута",
+                "time": "14:45",
+                "date": "10.11.25"
+            }
+        ]
+    },
+    "kul-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Кулагина",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/687",
+                "date": "09.09.25"
+            }
+        ]
+    },
+    "tul-ogr-turn-1": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/712",
+                "date": "15.09.25"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=302",
+                "title": "Видео из проезда всего маршрута",
+                "time": "5:02",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "tul-ogr-turn-2": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Тульская",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/811?t=43",
+                "date": "22.10.25",
+                "time": "0:43"
+            },
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=523",
+                "title": "Видео из проезда всего маршрута",
+                "time": "8:43",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "kauch-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Каучуковая",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/872?t=2913",
+                "title": "Видео из проезда всего маршрута",
+                "time": "48:33",
+                "date": "04.11.25"
+            }
+        ]
+    },
+    "mod-ogr-turn": {
+        "title": "Разворот в ограниченном пространстве или на проезжей части без использования прилегающей территории - ул. Модельная",
+        "videos": [
+            {
+                "url": "https://t.me/Andreiavtoinstryktor/905?t=537",
+                "title": "Видео из проезда всего маршрута",
+                "time": "8:57",
+                "date": "10.11.25"
             }
         ]
     }
