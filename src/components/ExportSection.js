@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import {ReactPDF, pdf} from '@react-pdf/renderer';
-import { Document, Page, PDFDownloadLink, Text, View, StyleSheet } from '@react-pdf/renderer';
-import { parse } from 'svg-parser';
-import { saveAs } from 'file-saver';
-import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya-new-map.svg';
 
 const ExportSection = ({ svgRef }) => {
     const [isExportingJPG, setIsExportingJPG] = useState(false);
@@ -162,7 +157,7 @@ const ExportSection = ({ svgRef }) => {
         
         const imgData = canvas.toDataURL('image/jpeg', 0.85);
         const pdf = new jsPDF({
-            orientation: 'landscape',
+            orientation: 'portrait',
             unit: 'mm',
             format: [originalWidth, originalHeight]
         });
