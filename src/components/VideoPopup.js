@@ -97,7 +97,7 @@ const VideoPopup = ({
             </button>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 max-h-[50vh] md:max-h-[80vh] overflow-y-auto">
             {popup.data.videos.map((video, index) => (
               <button
               onClick={() => handleVideoClick(video.url)}>
