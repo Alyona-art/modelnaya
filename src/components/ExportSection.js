@@ -174,9 +174,9 @@ const ExportSection = ({ svgRef }) => {
 
     return (
       <>
-        <div className="grow md:border-t md:border-gray-200 md:pt-3 md:mt-4">
+        <div className="flex-shrink-0 md:border-t md:border-gray-200 md:pt-3 md:mt-4">
           <h4 className="text-lg font-semibold text-gray-800 mb-2 hidden md:block">Скачать карту</h4>
-          <div className="flex md:gap-2 items-stretch h-full">
+          <div className="flex md:gap-2 items-stretch">
             <ExportButton
               onClick={exportAsJPG}
               disabled={isExportingJPG || isExportingPDF}

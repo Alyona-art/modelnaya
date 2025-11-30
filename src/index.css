@@ -9,5 +9,8 @@
 
     #root {
         @apply h-screen w-screen;
+        height: 100dvh;
+        width: 100vw;
+        overflow: hidden;
     }
 }
