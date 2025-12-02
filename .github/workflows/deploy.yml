@@ -35,4 +35,5 @@ jobs:
         with:
           branch: gh-pages
           folder: build
+          force: true
 
