@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoClose, IoLinkOutline } from 'react-icons/io5';
-import { FaQuestion, FaRegCopy,  FaCheck  } from "react-icons/fa6";
+import { FaQuestion, FaRegCopy,  FaCheck, FaTelegram  } from "react-icons/fa6";
 
 const FeedbackButton = ({ email = 'alyona.art.dev@gmail.com', groupLink = 'https://t.me/Andreiavtoinstryktor' }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,17 +53,29 @@ const FeedbackButton = ({ email = 'alyona.art.dev@gmail.com', groupLink = 'https
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email для связи:
+                  Связаться со мной:
                 </label>
-                <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                  <span className="flex-1 text-gray-900 font-mono text-sm">{email}</span>
-                  <button
-                    onClick={handleCopyEmail}
-                    className="hover:bg-gray-100 rounded-md transition-colors"
-                    title="Copy email"
+                <div className="flex flex-row gap-4 items-center">
+                  <div className="grow flex items-center gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <span className="flex-1 text-gray-900 font-mono text-xs truncate">{email}</span>
+                    <button
+                      onClick={handleCopyEmail}
+                      className="hover:bg-gray-100 rounded-md transition-colors flex-shrink-0"
+                      title="Copy email"
+                    >
+                      {copied ?<FaCheck className="w-4 h-4 fill-green-500" /> :<FaRegCopy className="w-4 h-4" />}
+                    </button>
+                  </div>
+                  <span className="text-xs">или</span>
+                  <a
+                    href="https://t.me/Art_libra"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 p-3 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg border border-blue-200 transition-colors"
                   >
-                    {copied ?<FaCheck className="w-4 h-4 fill-green-500" /> :<FaRegCopy className="w-4 h-4" />}
-                  </button>
+                    <FaTelegram className="w-4 h-4 fill-cyan-500" />
+                    <span className="text-xs">Телеграм</span>
+                  </a>
                 </div>
               </div>
 
