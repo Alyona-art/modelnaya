@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -57,7 +57,7 @@ const ExportSection = ({ svgRef }) => {
         
         const canvas = await html2canvas(tempContainer, {
             backgroundColor: 'white',
-            scale: 4,
+            scale: 2,
             useCORS: true,
             allowTaint: true,
             width: originalWidth,

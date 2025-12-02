@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import ControlPanel from './ControlPanel';
 import VideoPopup from './VideoPopup';
-import { ReactComponent as ModelnayaSvg } from '../assets/modelnaya-new-map.svg';
+import modelnayaSvgUrl from '../assets/modelnaya-raw.svg';
 import VideoData from '../assets/VideoData.json';
 
 const InteractiveMap = () => {
@@ -20,13 +20,37 @@ const InteractiveMap = () => {
   const [selectedElement, setSelectedElement] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
+  const [transform, setTransform] = useState(() => {
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    return { x: 0, y: 0, scale: isMobile ? 1 : 0.7 };
+  });
   const [interactiveElements, setInteractiveElements] = useState([]);
   const [lastTouchDistance, setLastTouchDistance] = useState(null);
   const [lastTouchCenter, setLastTouchCenter] = useState(null);
+  const [svgContent, setSvgContent] = useState('');
   
   const svgRef = useRef(null);
   const containerRef = useRef(null);
+  const svgContainerRef = useRef(null);
+  const isCenteredRef = useRef(false);
+
+  // Load SVG content
+  useEffect(() => {
+    fetch(modelnayaSvgUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then(text => {
+        setSvgContent(text);
+      })
+      .catch(error => {
+        console.error('Error loading SVG:', error);
+        console.error('SVG URL:', modelnayaSvgUrl);
+      });
+  }, [modelnayaSvgUrl]);
 
   const handleLayerToggle = (layerName) => {
     setLayers(prev => ({
@@ -36,75 +60,129 @@ const InteractiveMap = () => {
   };
 
   useEffect(() => {
-    if(!svgRef.current) return;
-
-    setInteractiveElements(Object.keys(VideoData).map(elementId => 
-    svgRef.current.querySelector(`#${elementId}`)
-  ).filter(Boolean));
-  }, []);
-
- useEffect(() => {
-  const handleSvgClick = (e) => {
-    let target = e.target;
+    if(!svgContainerRef.current || !svgContent) return;
     
-    while (target && target !== svgRef.current) {
-      if (target.id && VideoData[target.id]) {
-        e.stopPropagation();
-        console.log('Element clicked:', target.id);
+    let timeoutId;
+    let svgElement = null;
+    let cleanup = null;
+
+    // Wait for DOM to update after dangerouslySetInnerHTML
+    timeoutId = setTimeout(() => {
+      // Find the SVG element inside the container
+      svgElement = svgContainerRef.current.querySelector('svg');
+      if (svgElement) {
+        svgRef.current = svgElement;
+        setInteractiveElements(Object.keys(VideoData).map(elementId => 
+          svgElement.querySelector(`#${elementId}`)
+        ).filter(Boolean));
+
+        // Set up event listeners after SVG is loaded
+        const handleSvgClick = (e) => {
+          let target = e.target;
+          
+          while (target && target !== svgElement) {
+            if (target.id && VideoData[target.id]) {
+              e.stopPropagation();
+              console.log('Element clicked:', target.id);
+              
+              setSelectedElement(target);
+              setPopup({
+                elementId: target.id,
+                data: VideoData[target.id]
+              });
+              setIsPopupOpen(true);
+              return;
+            }
+            target = target.parentElement;
+          }
+        };
+
+        const handleSvgMouseOver = (e) => {
+          let target = e.target;
+          
+          while (target && target !== svgElement) {
+            if (target.id && VideoData[target.id]) {
+              target.style.filter = 'drop-shadow(0px 0px 2px rgba(18, 17, 56, 0.72))';    
+              target.style.cursor = 'pointer';
+              return;
+            }
+            target = target.parentElement;
+          }
+        };
+
+        const handleSvgMouseOut = (e) => {
+          let target = e.target;
+          
+          while (target && target !== svgElement) {
+            if (target.id && VideoData[target.id]) {
+              if (!e.relatedTarget || !e.relatedTarget.closest(`#${target.id}`)) {
+                target.style.filter = 'none';
+              }
+              return;
+            }
+            target = target.parentElement;
+          }
+        };
         
-        setSelectedElement(target);
-        setPopup({
-          elementId: target.id,
-          data: VideoData[target.id]
-        });
-        setIsPopupOpen(true);
-        return;
+        svgElement.addEventListener('click', handleSvgClick);
+        svgElement.addEventListener('mouseover', handleSvgMouseOver);
+        svgElement.addEventListener('mouseout', handleSvgMouseOut);
+
+        // Store cleanup function
+        cleanup = () => {
+          svgElement.removeEventListener('click', handleSvgClick);
+          svgElement.removeEventListener('mouseover', handleSvgMouseOver);
+          svgElement.removeEventListener('mouseout', handleSvgMouseOut);
+        };
       }
-      target = target.parentElement;
-    }
-  };
+    }, 0);
 
-  const handleSvgMouseOver = (e) => {
-    let target = e.target;
-    
-    while (target && target !== svgRef.current) {
-      if (target.id && VideoData[target.id]) {
-        target.style.filter = 'drop-shadow(0px 0px 2px rgba(18, 17, 56, 0.72))';    
-        target.style.cursor = 'pointer';
-        return;
-      }
-      target = target.parentElement;
-    }
-  };
-
-  const handleSvgMouseOut = (e) => {
-    let target = e.target;
-    
-    while (target && target !== svgRef.current) {
-      if (target.id && VideoData[target.id]) {
-        if (!e.relatedTarget || !e.relatedTarget.closest(`#${target.id}`)) {
-          target.style.filter = 'none';
-        }
-        return;
-      }
-      target = target.parentElement;
-    }
-  };
-
-  if (svgRef.current) {
-    const svgElement = svgRef.current;
-    
-    svgElement.addEventListener('click', handleSvgClick);
-    svgElement.addEventListener('mouseover', handleSvgMouseOver);
-    svgElement.addEventListener('mouseout', handleSvgMouseOut);
-
+    // Cleanup function
     return () => {
-      svgElement.removeEventListener('click', handleSvgClick);
-      svgElement.removeEventListener('mouseover', handleSvgMouseOver);
-      svgElement.removeEventListener('mouseout', handleSvgMouseOut);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      if (cleanup) {
+        cleanup();
+      }
     };
-  }
-}, []);
+  }, [svgContent]);
+
+  // Center map on desktop after SVG loads
+  useEffect(() => {
+    if (!svgContent) {
+      isCenteredRef.current = false;
+      return;
+    }
+    
+    if (transform.scale >= 1) {
+      isCenteredRef.current = true;
+      return;
+    }
+    
+    const timeoutId = setTimeout(() => {
+      if (svgRef.current && containerRef.current && !isCenteredRef.current) {
+        const svgRect = svgRef.current.getBoundingClientRect();
+        const containerRect = containerRef.current.getBoundingClientRect();
+        
+        const scaledSvgWidth = svgRect.width * transform.scale;
+        const scaledSvgHeight = svgRect.height * transform.scale;
+        
+        const centerX = (containerRect.width - scaledSvgWidth) / 2;
+        const centerY = (containerRect.height - scaledSvgHeight) / 2;
+        
+        setTransform(prev => ({
+          ...prev,
+          x: centerX,
+          y: centerY
+        }));
+        
+        isCenteredRef.current = true;
+      }
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [svgContent, transform.scale]);
 
   useEffect(() => {
     if (svgRef.current) {
@@ -304,14 +382,21 @@ const InteractiveMap = () => {
         onMouseDown={handleMouseDown}
         style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'none' }}
       >
-        <ModelnayaSvg
-          ref={svgRef}
-          className="svg-container w-full h-full transition-transform duration-100 ease-out" 
-          style={{
-            transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale})`,
-            transformOrigin: '0 0'
-          }}
-        />
+        {svgContent ? (
+          <div
+            ref={svgContainerRef}
+            className="svg-container w-full h-full transition-transform duration-100 ease-out" 
+            style={{
+              transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale})`,
+              transformOrigin: '0 0'
+            }}
+            dangerouslySetInnerHTML={{ __html: svgContent }}
+          />
+        ) : (
+          <div className="flex items-center justify-center w-full h-full">
+            <div className="text-gray-500">Загрузка карты...</div>
+          </div>
+        )}
       </div>
 
       <VideoPopup
