@@ -5,10 +5,52 @@ import jsPDF from 'jspdf';
 const ExportSection = ({ svgRef }) => {
     const [isExportingPNG, setIsExportingPNG] = useState(false);
     const [isExportingPDF, setIsExportingPDF] = useState(false);
+    const [exportProgress, setExportProgress] = useState(0);
 
     const exportAsPNG = async () => {
         if (isExportingPNG || !svgRef) return;
         setIsExportingPNG(true);
+        setExportProgress(0);
+        
+        // Start independent progress animation for 10 seconds
+        // Use requestAnimationFrame for high priority
+        let animationFrameId = null;
+        const animationDuration = 10000; // 10 seconds
+        const startTime = Date.now();
+        let isCompleted = false;
+        
+        // Progress animation via requestAnimationFrame (high priority)
+        const animateProgress = () => {
+            if (isCompleted) {
+                return;
+            }
+            
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min((elapsed / animationDuration) * 95, 95);
+            setExportProgress(Math.floor(progress));
+            
+            if (progress < 95 && !isCompleted) {
+                animationFrameId = requestAnimationFrame(animateProgress);
+            } else {
+                isCompleted = true;
+            }
+        };
+        
+        // Start animation through multiple setTimeout calls to guarantee execution
+        setTimeout(() => {
+            setTimeout(() => {
+                setTimeout(() => {
+                    animationFrameId = requestAnimationFrame(animateProgress);
+                }, 0);
+            }, 0);
+        }, 0);
+        
+        // Wait for several frames to let the browser render UI and start animation
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         try {
         let svgElement = svgRef.current;
         
@@ -53,7 +95,7 @@ const ExportSection = ({ svgRef }) => {
         document.body.appendChild(tempContainer);
         
         // Wait a bit for the SVG to render
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 50));
         
         const canvas = await html2canvas(tempContainer, {
             backgroundColor: 'white',
@@ -62,8 +104,17 @@ const ExportSection = ({ svgRef }) => {
             allowTaint: true,
             width: originalWidth,
             height: originalHeight,
-            logging: false
+            logging: false,
+            removeContainer: true,
+            imageTimeout: 0
         });
+        
+        // Stop animation and set to 100%
+        isCompleted = true;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+        setExportProgress(100);
         
         // Clean up
         document.body.removeChild(tempContainer);
@@ -73,9 +124,16 @@ const ExportSection = ({ svgRef }) => {
         link.href = canvas.toDataURL('image/png');
         link.click();
         } catch (error) {
-        console.error('Error exporting JPG:', error);
+        isCompleted = true;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+        console.error('Error exporting PNG:', error);
         } finally {
-        setIsExportingPNG(false);
+        setTimeout(() => {
+            setIsExportingPNG(false);
+            setExportProgress(0);
+        }, 300);
         }
     };
 
@@ -83,6 +141,47 @@ const ExportSection = ({ svgRef }) => {
     const exportAsPDF = async () => {
         if (isExportingPDF || !svgRef?.current) return;
         setIsExportingPDF(true);
+        setExportProgress(0);
+        
+        // Start independent progress animation for 10 seconds
+        // Use requestAnimationFrame for high priority
+        let animationFrameId = null;
+        const animationDuration = 10000; // 10 seconds
+        const startTime = Date.now();
+        let isCompleted = false;
+        
+        // Progress animation via requestAnimationFrame (high priority)
+        const animateProgress = () => {
+            if (isCompleted) {
+                return;
+            }
+            
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min((elapsed / animationDuration) * 95, 95);
+            setExportProgress(Math.floor(progress));
+            
+            if (progress < 95 && !isCompleted) {
+                animationFrameId = requestAnimationFrame(animateProgress);
+            } else {
+                isCompleted = true;
+            }
+        };
+        
+        // Start animation through multiple setTimeout calls to guarantee execution
+        setTimeout(() => {
+            setTimeout(() => {
+                setTimeout(() => {
+                    animationFrameId = requestAnimationFrame(animateProgress);
+                }, 0);
+            }, 0);
+        }, 0);
+        
+        // Wait for several frames to let the browser render UI and start animation
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => requestAnimationFrame(resolve));
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         try {
         let svgElement = svgRef.current.querySelector('svg');
         
@@ -95,6 +194,10 @@ const ExportSection = ({ svgRef }) => {
         }
         
         if (!svgElement) {
+            isCompleted = true;
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
             console.error('SVG element not found anywhere');
             return;
         }
@@ -140,17 +243,26 @@ const ExportSection = ({ svgRef }) => {
         document.body.appendChild(tempContainer);
         
         // Wait a bit for the SVG to render
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise(resolve => setTimeout(resolve, 50));
         
         const canvas = await html2canvas(tempContainer, {
             backgroundColor: 'white',
-            scale: 4,
+            scale: 3,
             useCORS: true,
             allowTaint: true,
             width: originalWidth,
             height: originalHeight,
-            logging: false
+            logging: false,
+            removeContainer: true,
+            imageTimeout: 0
         });
+        
+        // Stop animation and set to 100%
+        isCompleted = true;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+        setExportProgress(100);
         
         // Clean up
         document.body.removeChild(tempContainer);
@@ -163,12 +275,18 @@ const ExportSection = ({ svgRef }) => {
         });
 
         pdf.addImage(imgData, 'JPEG', 0, 0, originalWidth, originalHeight);
-        
         pdf.save('Modelnaya.pdf');
         } catch (error) {
+        isCompleted = true;
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
         console.error('Error exporting PDF:', error);
         } finally {
-        setIsExportingPDF(false);
+        setTimeout(() => {
+            setIsExportingPDF(false);
+            setExportProgress(0);
+        }, 300);
         }
     };
 
@@ -181,6 +299,7 @@ const ExportSection = ({ svgRef }) => {
               onClick={exportAsPNG}
               disabled={isExportingPNG || isExportingPDF}
               loading={isExportingPNG}
+              progress={isExportingPNG ? exportProgress : 0}
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
@@ -193,6 +312,7 @@ const ExportSection = ({ svgRef }) => {
               onClick={exportAsPDF}
               disabled={isExportingPNG || isExportingPDF}
               loading={isExportingPDF}
+              progress={isExportingPDF ? exportProgress : 0}
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
@@ -208,22 +328,32 @@ const ExportSection = ({ svgRef }) => {
 };
 export default ExportSection;
 
-const ExportButton = ({ onClick, disabled, loading, icon, text, color, fullWidth = false }) => {
+const ExportButton = ({ onClick, disabled, loading, progress, icon, text, color, fullWidth = false }) => {
     return (
         <button
         onClick={onClick}
         disabled={disabled}
-        className={`${fullWidth ? 'w-full' : 'flex-1'} px-3 py-2 text-xs font-bold ${color} text-white md:rounded hover:opacity-90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2`}
+        className={`${fullWidth ? 'w-full' : 'flex-1'} relative px-3 py-2 text-xs font-bold ${color} text-white md:rounded hover:opacity-90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 overflow-hidden`}
         >
-        {loading ? (
-            <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-        ) : (
-            icon
+        {/* Progress bar covering full button height */}
+        {loading && (
+            <div 
+                className="absolute inset-0 bg-white bg-opacity-30 transition-all duration-300 ease-out"
+                style={{ width: `${progress}%` }}
+            />
         )}
-        <span>{text}</span>
+        
+        {/* Button content */}
+        <span className="relative z-10 flex items-center justify-center gap-2">
+            {loading ? (
+                <span>ЗАГРУЗКА...</span>
+            ) : (
+                <>
+                    {icon}
+                    <span>{text}</span>
+                </>
+            )}
+        </span>
         </button>
     );
 };
