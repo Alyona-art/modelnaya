@@ -55,7 +55,7 @@ const FeedbackButton = ({ email = 'alyona.art.dev@gmail.com', groupLink = 'https
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Связаться со мной:
                 </label>
-                <div className="flex flex-row gap-4 items-center">
+                <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-stretch md:items-center">
                   <div className="grow flex items-center gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
                     <span className="flex-1 text-gray-900 font-mono text-xs truncate">{email}</span>
                     <button
@@ -66,7 +66,7 @@ const FeedbackButton = ({ email = 'alyona.art.dev@gmail.com', groupLink = 'https
                       {copied ?<FaCheck className="w-4 h-4 fill-green-500" /> :<FaRegCopy className="w-4 h-4" />}
                     </button>
                   </div>
-                  <span className="text-xs">или</span>
+                  <span className="text-xs text-center">или</span>
                   <a
                     href="https://t.me/Art_libra"
                     target="_blank"
