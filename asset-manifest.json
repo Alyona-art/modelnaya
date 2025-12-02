@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/modelnaya/static/css/main.73a5eb47.css",
-    "main.js": "/modelnaya/static/js/main.63c5391a.js",
+    "main.css": "/modelnaya/static/css/main.7a888311.css",
+    "main.js": "/modelnaya/static/js/main.d13deb2d.js",
     "static/js/724.43d77b51.chunk.js": "/modelnaya/static/js/724.43d77b51.chunk.js",
     "static/js/320.ed0b263f.chunk.js": "/modelnaya/static/js/320.ed0b263f.chunk.js",
     "static/media/modelnaya-raw.svg": "/modelnaya/static/media/modelnaya-raw.5ef18c8bc89affe17b44.svg",
@@ -9,13 +9,13 @@
     "static/media/transport-sign.svg": "/modelnaya/static/media/transport-sign.01d91cc002899d7ebe8517e9c7073a15.svg",
     "static/media/stop-sign.svg": "/modelnaya/static/media/stop-sign.27babf954fe5588df1e8481a4b52083e.svg",
     "index.html": "/modelnaya/index.html",
-    "main.73a5eb47.css.map": "/modelnaya/static/css/main.73a5eb47.css.map",
-    "main.63c5391a.js.map": "/modelnaya/static/js/main.63c5391a.js.map",
+    "main.7a888311.css.map": "/modelnaya/static/css/main.7a888311.css.map",
+    "main.d13deb2d.js.map": "/modelnaya/static/js/main.d13deb2d.js.map",
     "724.43d77b51.chunk.js.map": "/modelnaya/static/js/724.43d77b51.chunk.js.map",
     "320.ed0b263f.chunk.js.map": "/modelnaya/static/js/320.ed0b263f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.73a5eb47.css",
-    "static/js/main.63c5391a.js"
+    "static/css/main.7a888311.css",
+    "static/js/main.d13deb2d.js"
   ]
 }
