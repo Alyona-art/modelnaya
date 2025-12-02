@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ExportSection from './ExportSection';
 import LayerControls from './LayerControls';
 import TurnsToggle from './TurnsToggle';

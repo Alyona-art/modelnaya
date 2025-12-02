@@ -107,7 +107,7 @@ const VideoPopup = ({
                   <div
                     className="text-left text-blue-600 hover:text-blue-800 hover:underline transition-colors"
                   >
-                    {`${video.title != undefined ? video.title : "Видео"} ${video.date!=undefined ? `(${video.date})`: ``}`}
+                    {`${video.title !== undefined ? video.title : "Видео"} ${video.date !== undefined ? `(${video.date})`: ``}`}
                   </div>
                   {video.time && (
                     <span className="flex flex-row items-center gap-1 text-xs text-gray-500 font-mono">
