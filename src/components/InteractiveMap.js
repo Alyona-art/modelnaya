@@ -50,7 +50,7 @@ const InteractiveMap = () => {
         console.error('Error loading SVG:', error);
         console.error('SVG URL:', modelnayaSvgUrl);
       });
-  }, [modelnayaSvgUrl]);
+  }, []);
 
   const handleLayerToggle = (layerName) => {
     setLayers(prev => ({
