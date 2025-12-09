@@ -1,20 +1,28 @@
 # Modelnaya Interactive Map
 
-An interactive React application featuring a zoomable and pannable map with layer controls and clickable elements.
+An interactive React application featuring a zoomable and pannable map with layer controls, clickable elements, and export functionality.
 
 ## Features
 
-- **Interactive Map**: Zoom and pan functionality with mouse wheel and drag
-- **Layer Controls**: Toggle visibility of "stops" and "speed" layers
+- **Interactive Map**: Zoom and pan functionality with mouse wheel, drag, and touch gestures
+- **Layer Controls**: Toggle visibility of multiple layers:
+  - Stop limits (Места для остановки)
+  - Speed limits (Разрешенная скорость)
+  - Bus stops (Остановки транспорта)
+  - Left turns (Левые повороты)
+  - Right turns (Правые повороты)
+  - U-turns (Развороты)
 - **Hover Effects**: Interactive elements highlight on hover
-- **Video Popups**: Click on U-turn elements to see related video links with timecodes
-- **Responsive Design**: Works on desktop and mobile devices
+- **Video Popups**: Click on interactive elements to see related video links with timecodes
+- **Export Functionality**: Export the map as PNG or PDF
+- **Feedback Button**: Contact form and links to Telegram group
+- **Responsive Design**: Works on desktop and mobile devices with touch support
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
+- Node.js (version 16 or higher)
 - npm or yarn
 
 ### Installation
@@ -39,62 +47,81 @@ npm start
 
 ## Deployment to GitHub Pages
 
-1. Build the project:
-```bash
-npm run build
-```
+The project is automatically deployed to GitHub Pages using GitHub Actions workflows. When you push changes to the main branch, the workflow will:
 
-2. Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
+1. Build the project
+2. Deploy the built files to GitHub Pages
 
-Make sure to update the `homepage` field in `package.json` with your GitHub username and repository name.
+No manual deployment steps are required. The deployment happens automatically on every push to the main branch.
 
 ## Usage
 
-- **Zoom**: Use mouse wheel to zoom in/out
+- **Zoom**: Use mouse wheel to zoom in/out (desktop) or pinch gesture (mobile)
 - **Pan**: Click and drag to move the map around
-- **Layer Controls**: Use the controls in the top-left to show/hide layers
-- **Interactive Elements**: Click on the U-turn elements to see video links
+- **Layer Controls**: Use the controls panel at the bottom (mobile) or left side (desktop) to show/hide layers
+- **Turn Controls**: Toggle visibility of left turns, right turns, and U-turns separately
+- **Interactive Elements**: Click on interactive elements to see video links with timecodes
 - **Hover**: Hover over interactive elements to see highlighting effects
+- **Export**: Use the export buttons to download the map as PNG or PDF
+- **Feedback**: Click the question mark button in the top-right corner to contact the developers
 
 ## Customization
 
 ### Adding Video Links
 
-Edit the `videoData` object in `src/components/InteractiveMap.js` to add your own video links:
+Edit `src/assets/VideoData.json` to add your own video links:
 
-```javascript
-const videoData = {
-  'tul-ava-uturn': {
-    title: 'Your Title',
-    videos: [
-      { url: 'https://your-video-url', title: 'Video Title', timecode: '2:30' }
+```json
+{
+  "element-id": {
+    "title": "Your Title",
+    "videos": [
+      {
+        "url": "https://your-video-url",
+        "title": "Video Title",
+        "time": "2:30",
+        "date": "2024-01-01"
+      }
     ]
   }
-};
+}
 ```
+
+The element ID should match the `id` attribute of the SVG element you want to make interactive.
 
 ### Styling
 
-- Map styles: `src/components/InteractiveMap.css`
-- Layer controls: `src/components/LayerControls.css`
-- Popup styles: `src/components/Popup.css`
+The project uses Tailwind CSS for styling. Configuration is in `tailwind.config.js`. Styles are applied using Tailwind utility classes directly in components.
 
 ## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── InteractiveMap.js      # Main map component
-│   ├── InteractiveMap.css     # Map styles
-│   ├── LayerControls.js      # Layer toggle controls
-│   ├── LayerControls.css     # Control styles
-│   ├── Popup.js              # Video popup component
-│   └── Popup.css             # Popup styles
-├── App.js                    # Main app component
-├── App.css                   # App styles
-├── index.js                  # React entry point
-└── index.css                # Global styles
+│   ├── InteractiveMap.js      # Main map component with zoom/pan logic
+│   ├── ControlPanel.js        # Container for all control panels
+│   ├── LayerControls.js       # Layer toggle controls (stop, speed, bus stops)
+│   ├── TurnsToggle.js         # Turn visibility toggles (left, right, U-turns)
+│   ├── CustomToggle.js        # Reusable toggle component
+│   ├── VideoPopup.js          # Video popup component with Floating UI
+│   ├── ExportSection.js       # PNG/PDF export functionality
+│   └── FeedbackButton.js      # Feedback modal with contact info
+├── assets/
+│   ├── modelnaya-raw.svg      # Main SVG map file
+│   ├── VideoData.json         # Video links data for interactive elements
+│   └── *.svg                  # Icon assets
+├── App.js                     # Main app component
+├── App.css                    # App styles
+├── index.js                   # React entry point
+└── index.css                  # Global styles
 ```
+
+## Technologies Used
+
+- **React 18** - UI framework
+- **Tailwind CSS** - Styling
+- **@floating-ui/react** - Popup positioning
+- **html2canvas** - Canvas rendering for exports
+- **jspdf** - PDF generation
+- **react-icons** - Icon library
+- **react-app-rewired** - Build configuration override

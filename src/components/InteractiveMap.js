@@ -4,11 +4,22 @@ import VideoPopup from './VideoPopup';
 import modelnayaSvgUrl from '../assets/modelnaya-raw.svg';
 import VideoData from '../assets/VideoData.json';
 
+// Centralized layer configuration
+const LAYER_CONFIG = {
+  stopLimits: { svgSelector: '#stop-limits' },
+  speedLimits: { svgSelector: '#speed-limits' },
+  busStop: { svgSelector: '#bus-stop' },
+  pedestrian: { svgSelector: '#pedestrian' },
+  showLeftTurns: { svgSelector: '#l-turns' },
+  showRightTurns: { svgSelector: '#r-turns' },
+  showUTurns: { svgSelector: '#u-turns' },
+};
+
 const InteractiveMap = () => {
   const [layers, setLayers] = useState({
-    stops: true,
-    speed: true,
-    transport: true,
+    stopLimits: true,
+    speedLimits: true,
+    busStop: true,
     pedestrian: true,
     showLeftTurns: true,
     showRightTurns: true,
@@ -336,35 +347,12 @@ const InteractiveMap = () => {
 
   useEffect(() => {
     if (svgRef.current) {
-      const stopsGroup = svgRef.current.querySelector('#stops');
-      const speedGroup = svgRef.current.querySelector('#speed');
-      const transportGroup = svgRef.current.querySelector('#transport');
-      const pedestrianGroup = svgRef.current.querySelector('#pedestrian');
-      const leftTurnsGroup = svgRef.current.querySelector('#l-turns');
-      const rightTurnsGroup = svgRef.current.querySelector('#r-turns');
-      const uTurnsGroup = svgRef.current.querySelector('#u-turns');
-      
-      if (stopsGroup) {
-        stopsGroup.classList.toggle('hidden', !layers.stops);
-      }
-      if (speedGroup) {
-        speedGroup.classList.toggle('hidden', !layers.speed);
-      }
-      if (transportGroup) {
-        transportGroup.classList.toggle('hidden', !layers.transport);
-      }
-      if (pedestrianGroup) {
-        pedestrianGroup.classList.toggle('hidden', !layers.pedestrian);
-      }
-      if (leftTurnsGroup) {
-        leftTurnsGroup.classList.toggle('hidden', !layers.showLeftTurns);
-      }
-      if (rightTurnsGroup) {
-        rightTurnsGroup.classList.toggle('hidden', !layers.showRightTurns);
-      }
-      if (uTurnsGroup) {
-        uTurnsGroup.classList.toggle('hidden', !layers.showUTurns);
-      }
+      Object.entries(LAYER_CONFIG).forEach(([layerKey, config]) => {
+        const group = svgRef.current.querySelector(config.svgSelector);
+        if (group) {
+          group.classList.toggle('hidden', !layers[layerKey]);
+        }
+      });
     }
   }, [layers]);
 
