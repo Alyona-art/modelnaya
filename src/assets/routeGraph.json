@@ -1,7 +1,7 @@
 {
   "_meta": {
     "version": "0.1-draft",
-    "status": "Черновик для проверки инструктором. Не подключён к UI.",
+    "status": "Черновик для проверки. Не подключён к UI.",
     "howToEdit": {
       "nodeId": "Уникальный slug, латиница. Формат: {тип}-{улицы}-{направление-подъезда}",
       "type": "start | end | exit | intersection | gap | segment-end",
@@ -49,23 +49,7 @@
       "anchorPicker": true,
       "anchorsStreet": "Техническая",
       "review": [
-        "EXAM_RELEVANT",
-        "VERIFY: якоря в cityAnchors"
-      ]
-    },
-    {
-      "id": "start-gorod-other",
-      "type": "start",
-      "category": "gorod",
-      "label": "Другая улица",
-      "description": "Редкий старт не с Технической: улица + направление + якорь",
-      "mapFocus": null,
-      "streetPicker": true,
-      "toNodeId": null,
-      "review": [
-        "VERIFY",
-        "INCOMPLETE",
-        "GUESS: дописать якоря для других улиц в cityAnchors"
+        "EXAM_RELEVANT"
       ]
     }
   ],
@@ -79,19 +63,7 @@
       },
       "videoDataKey": "ploshadka-authodrome",
       "review": [
-        "VERIFY",
         "EXAM_RELEVANT"
-      ]
-    },
-    {
-      "id": "end-gorod",
-      "type": "end",
-      "label": "Завершение маршрута в городе",
-      "mapFocus": null,
-      "review": [
-        "VERIFY",
-        "INCOMPLETE",
-        "GUESS: уточнить варианты финиша в городе"
       ]
     }
   ],
@@ -117,181 +89,6 @@
       "opensEndPicker": true
     }
   ],
-  "cityAnchors": [
-    {
-      "_comment": "Якоря для start-gorod-tech. direction = куда ехали до старта маршрута.",
-      "id": "anchor-tech-mod",
-      "street": "Техническая",
-      "label": "У перекрёстка Модельная",
-      "direction": "к Кулагина",
-      "mapFocus": {
-        "svgId": "tech-mod-l-turn-1"
-      },
-      "toNodeId": null,
-      "review": [
-        "VERIFY",
-        "GUESS: направление и toNodeId"
-      ]
-    },
-    {
-      "id": "anchor-tech-kul",
-      "street": "Техническая",
-      "label": "У перекрёстка Кулагина",
-      "direction": "к Модельной",
-      "mapFocus": {
-        "svgId": "tech-kul-straight"
-      },
-      "toNodeId": "crossing-tech-kul-from-tech",
-      "review": [
-        "VERIFY",
-        "EXAM_RELEVANT"
-      ]
-    },
-    {
-      "id": "anchor-tech-max",
-      "street": "Техническая",
-      "label": "Участок разгона",
-      "direction": "к Кулагина",
-      "mapFocus": {
-        "svgId": "tech-max"
-      },
-      "videoDataKey": "tech-max",
-      "toNodeId": null,
-      "review": [
-        "VERIFY",
-        "INCOMPLETE"
-      ]
-    },
-    {
-      "id": "anchor-tech-stop",
-      "street": "Техническая",
-      "label": "Район остановки",
-      "direction": "к Тульской",
-      "mapFocus": {
-        "svgId": "tech-stop"
-      },
-      "videoDataKey": "tech-stop",
-      "toNodeId": null,
-      "review": [
-        "VERIFY",
-        "INCOMPLETE"
-      ]
-    },
-    {
-      "id": "anchor-tech-railway",
-      "street": "Техническая",
-      "label": "У ЖД переезда",
-      "direction": "к Тульской",
-      "mapFocus": {
-        "svgId": "tech-prep"
-      },
-      "videoDataKey": "tech-prep",
-      "toNodeId": null,
-      "review": [
-        "VERIFY",
-        "EXAM_RELEVANT",
-        "INCOMPLETE"
-      ]
-    },
-    {
-      "id": "anchor-tech-gap",
-      "street": "Техническая",
-      "label": "Разрыв сплошной",
-      "direction": "к Модельной",
-      "mapFocus": {
-        "svgId": "tech-uturn"
-      },
-      "videoDataKey": "tech-uturn",
-      "toNodeId": "gap-tech-uturn",
-      "review": [
-        "VERIFY",
-        "EXAM_RELEVANT"
-      ]
-    },
-    {
-      "id": "anchor-tech-tram",
-      "street": "Техническая",
-      "label": "Трамвайные пути",
-      "direction": "к Модельной",
-      "mapFocus": {
-        "svgId": "tech-uturn-tram"
-      },
-      "videoDataKey": "tech-uturn-tram",
-      "toNodeId": "gap-tech-uturn-tram",
-      "review": [
-        "VERIFY"
-      ]
-    },
-    {
-      "id": "anchor-tech-tul",
-      "street": "Техническая",
-      "label": "У перекрёстка Тульская",
-      "direction": "к Кулагина",
-      "mapFocus": {
-        "svgId": "tech-tul-l-turn"
-      },
-      "toNodeId": "crossing-tech-tul",
-      "review": [
-        "VERIFY",
-        "INCOMPLETE"
-      ]
-    }
-  ],
-  "segments": [
-    {
-      "id": "segment-tech-kul-to-crossing",
-      "label": "ул. Техническая — подъезд к Кулагина",
-      "fromNodeId": null,
-      "toNodeId": "crossing-tech-kul-from-tech",
-      "mapFocus": {
-        "svgId": "tech-kul-straight"
-      },
-      "exerciseZones": [
-        {
-          "id": "before-crossing",
-          "label": "Перед перекрёстком"
-        },
-        {
-          "id": "after-crossing",
-          "label": "После перекрёстка"
-        }
-      ],
-      "recommendedMarkers": [
-        {
-          "svgId": "tech-max",
-          "label": "Типичное место разгона"
-        },
-        {
-          "id": "tech-stop",
-          "label": "Типичное место остановки"
-        }
-      ],
-      "review": [
-        "VERIFY",
-        "EXAM_RELEVANT"
-      ]
-    },
-    {
-      "id": "segment-tech-railway-to-prep",
-      "label": "ул. Техническая — ЖД переезд → препятствие",
-      "fromNodeId": null,
-      "toNodeId": null,
-      "mapFocus": {
-        "svgId": "tech-prep"
-      },
-      "recommendedMarkers": [
-        {
-          "svgId": "tech-prep",
-          "label": "Объезд препятствия"
-        }
-      ],
-      "review": [
-        "VERIFY",
-        "EXAM_RELEVANT",
-        "INCOMPLETE"
-      ]
-    }
-  ],
   "nodes": [
     {
       "id": "exit-autodrome",
@@ -309,10 +106,7 @@
           "maneuver": "left",
           "svgId": null,
           "toNodeId": "crossing-akt-mod-from-akt",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "right",
@@ -320,22 +114,19 @@
           "maneuver": "right",
           "svgId": null,
           "toNodeId": "crossing-akt-kul-from-akt",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
         "EXAM_RELEVANT",
-        "VERIFY: привязать svgId стрелок выезда, если есть на карте"
+        "VERIFY"
       ]
     },
     {
       "id": "crossing-tech-mod-1",
       "type": "intersection",
       "label": "Техническая × Модельная",
-      "approach": "Ехали по Технической в сторону Модельной",
+      "approach": "Ехали по Технической в сторону центра",
       "mapFocus": {
         "svgId": "tech-mod-l-turn-1"
       },
@@ -347,10 +138,7 @@
           "svgId": "tech-mod-l-turn-1",
           "videoDataKey": "tech-mod-l-turn-1",
           "toNodeId": "kauch-l-pril-turn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "right",
@@ -358,12 +146,8 @@
           "maneuver": "right",
           "svgId": "tech-mod-r-turn-1",
           "videoDataKey": "tech-mod-r-turn-1",
-          "toNodeId": "crossing-mod-akt-from-mod",
-          "enabled": true,
-          "review": [
-            "MISSING_NODE",
-            "VERIFY: куда именно направо"
-          ]
+          "toNodeId": "crossing-mod-akt-1",
+          "enabled": true
         },
         {
           "id": "straight",
@@ -371,10 +155,7 @@
           "maneuver": "straight",
           "svgId": null,
           "toNodeId": "gap-tech-uturn-tram",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -406,11 +187,24 @@
           "maneuver": "left",
           "svgId": "tech-mod-l-turn-2",
           "videoDataKey": "tech-mod-l-turn-2",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "toNodeId": "crossing-mod-akt-1",
+          "enabled": true
+        },
+        {
+          "id": "right",
+          "label": "Направо",
+          "maneuver": "right",
+          "svgId": "tech-mod-r-turn-2",
+          "videoDataKey": "tech-mod-r-turn-2",
+          "toNodeId": "kauch-l-pril-turn",
+          "enabled": true
+        },
+        { "id": "straight",
+          "label": "Прямо",
+          "maneuver": "straight",
+          "svgId": null,
+          "toNodeId": "crossing-tech-kul-1",
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -424,7 +218,7 @@
       ],
       "review": [
         "VERIFY",
-        "GUESS: отдельный узел или тот же crossing-tech-mod-from-tech"
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -452,21 +246,15 @@
           "svgId": "mod-tech-r-turn-1",
           "videoDataKey": "mod-tech-r-turn-2",
           "toNodeId": "gap-tech-uturn-tram",
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "enabled": true
         },
         {
           "id": "straight",
           "label": "Прямо",
           "maneuver": "straight",
           "svgId": null,
-          "toNodeId": null,
-          "enabled": false,
-          "review": [
-            "VERIFY: есть ли проезд прямо"
-          ]
+          "toNodeId": "kauch-l-pril-turn",
+          "enabled": true
         }
       ],
       "review": [
@@ -490,10 +278,7 @@
           "svgId": "tech-kul-straight",
           "videoDataKey": "tech-kul-straight",
           "toNodeId": "gap-tech-uturn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "left",
@@ -511,13 +296,11 @@
           "svgId": "tech-kul-uturn-1",
           "videoDataKey": "tech-kul-uturn-1",
           "toNodeId": "crossing-tech-mod-1",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
+        "VERIFY",
         "EXAM_RELEVANT"
       ]
     },
@@ -537,10 +320,7 @@
           "svgId": "tech-kul-r-turn",
           "videoDataKey": "tech-kul-r-turn",
           "toNodeId": "crossing-kul-akt-from-kul",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "straight",
@@ -549,10 +329,7 @@
           "svgId": "tech-kul-straight",
           "videoDataKey": "tech-kul-straight",
           "toNodeId": "crossing-tech-mod-1",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -561,14 +338,12 @@
           "svgId": "tech-kul-uturn-2",
           "videoDataKey": "tech-kul-uturn-2",
           "toNodeId": "gap-tech-uturn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -587,10 +362,7 @@
           "svgId": "kul-tech-l-turn",
           "videoDataKey": "kul-tech-l-turn",
           "toNodeId": "gap-tech-uturn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "right",
@@ -599,10 +371,7 @@
           "svgId": "kul-tech-r-turn",
           "videoDataKey": "kul-tech-r-turn",
           "toNodeId": "crossing-tech-mod-1",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -611,14 +380,12 @@
           "svgId": "kul-tech-uturn",
           "videoDataKey": "kul-tech-uturn",
           "toNodeId": "crossing-akt-mod-from-akt",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "EXAM_RELEVANT"
+        "EXAM_RELEVANT",
+        "VERIFY"
       ]
     },
     {
@@ -655,21 +422,19 @@
           "svgId": "kul-akt-straight",
           "videoDataKey": "kul-akt-straight",
           "toNodeId": "gap-ava-uturn-tram",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "EXAM_RELEVANT"
+        "EXAM_RELEVANT",
+        "VERIFY"
       ]
     },
     {
-      "id": "crossing-akt-mod-from-akt",
+      "id": "crossing-akt-mod",
       "type": "intersection",
       "label": "Актайская × Модельная",
-      "approach": "Ехали по Актайской (к Модельной)",
+      "approach": "Ехали по Актайской",
       "mapFocus": {
         "svgId": "akt-mod-l-turn"
       },
@@ -680,7 +445,16 @@
           "maneuver": "left",
           "svgId": "akt-mod-l-turn",
           "videoDataKey": "akt-mod-l-turn",
-          "toNodeId": "crossing-mod-akt-from-mod",
+          "toNodeId": "crossing-mod-tech-1",
+          "enabled": true
+        },
+        {
+          "id": "right",
+          "label": "Направо",
+          "maneuver": "right",
+          "svgId": "akt-mod-r-turn",
+          "videoDataKey": "akt-mod-r-turn",
+          "toNodeId": "crossing-mod-ava",
           "enabled": true
         },
         {
@@ -689,100 +463,112 @@
           "maneuver": "uturn",
           "svgId": "akt-mod-uturn",
           "videoDataKey": "akt-mod-uturn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "toNodeId": "enter-autodrome",
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
-      "id": "crossing-mod-akt-from-mod",
+      "id": "crossing-mod-akt-1",
       "type": "intersection",
       "label": "Модельная × Актайская",
-      "approach": "Ехали по Модельной (к Актайской)",
+      "approach": "Ехали по Модельной в сторону ГИБДД",
       "mapFocus": {
         "svgId": "mod-akt-l-turn"
       },
       "actions": [
-        {
-          "id": "left",
-          "label": "Налево",
-          "maneuver": "left",
-          "svgId": "mod-akt-l-turn",
-          "videoDataKey": "mod-akt-l-turn",
-          "toNodeId": "crossing-akt-mod-from-akt",
-          "enabled": true
-        },
         {
           "id": "right",
           "label": "Направо",
           "maneuver": "right",
           "svgId": "mod-akt-r-turn",
           "videoDataKey": "mod-akt-r-turn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "toNodeId": "enter-autodrome",
+          "enabled": true
+        },
+        {
+          "id": "straight",
+          "label": "Прямо",
+          "maneuver": "straight",
+          "svgId": "mod-akt-straight",
+          "videoDataKey": "mod-akt-straight",
+          "toNodeId": "crossing-mod-ava",
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
-      "id": "crossing-mod-leb-from-mod",
+      "id": "crossing-mod-akt-2",
       "type": "intersection",
-      "label": "Модельная × Лебедева",
-      "approach": "Ехали по Модельной (к Лебедева)",
+      "label": "Модельная × Актайская",
+      "approach": "Ехали по Модельной в сторону Технической",
       "mapFocus": {
-        "svgId": "mod-leb-l-turn"
+        "svgId": "mod-akt-r-turn"
       },
       "actions": [
         {
           "id": "left",
           "label": "Налево",
           "maneuver": "left",
-          "svgId": "mod-leb-l-turn",
-          "videoDataKey": "mod-leb-l-turn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
-        },
-        {
-          "id": "right",
-          "label": "Направо",
-          "maneuver": "right",
-          "svgId": "mod-leb-r-turn",
-          "videoDataKey": "mod-leb-r-turn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "svgId": "mod-akt-r-turn",
+          "videoDataKey": "mod-akt-r-turn",
+          "toNodeId": "enter-autodrome",
+          "enabled": true
         },
         {
           "id": "straight",
           "label": "Прямо",
           "maneuver": "straight",
-          "svgId": "mod-leb-straight",
-          "videoDataKey": "mod-leb-straight",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "svgId": "mod-akt-straight",
+          "videoDataKey": "mod-akt-straight",
+          "toNodeId": "crossing-mod-tech-1",
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
+      ]
+    },
+    {
+      "id": "crossing-mod-ava",
+      "type": "intersection",
+      "label": "Модельная × Авангардная",
+      "approach": "Ехали по Модельной",
+      "mapFocus": {
+        "svgId": "mod-ava-l-turn"
+      },
+      "actions": [
+        {
+          "id": "right",
+          "label": "Направо",
+          "maneuver": "right",
+          "svgId": "mod-ava-r-turn",
+          "videoDataKey": "mod-ava-r-turn",
+          "toNodeId": "crossing-mod-akt-2",
+          "enabled": false
+        },
+        {
+          "id": "uturn",
+          "label": "Разворот",
+          "maneuver": "uturn",
+          "svgId": "mod-ava-uturn",
+          "videoDataKey": "mod-ava-uturn",
+          "toNodeId": "crossing-mod-akt-2",
+          "enabled": true
+        }
+      ],
+      "review": [
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -801,10 +587,7 @@
           "svgId": "tech-uturn",
           "videoDataKey": "tech-uturn",
           "toNodeId": "crossing-tech-kul-2",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -812,14 +595,12 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "gap-tech-uturn-1-after-railway",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "EXAM_RELEVANT"
+        "EXAM_RELEVANT",
+        "VERIFY"
       ]
     },
     {
@@ -838,10 +619,7 @@
           "svgId": "tech-uturn",
           "videoDataKey": "tech-uturn",
           "toNodeId": "crossing-tech-kul-2",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -849,14 +627,12 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "crossing-tech-tul",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "EXAM_RELEVANT"
+        "EXAM_RELEVANT",
+        "VERIFY"
       ]
     },
     {
@@ -875,10 +651,7 @@
           "svgId": "tech-uturn",
           "videoDataKey": "tech-uturn",
           "toNodeId": "crossing-tech-tul",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -886,14 +659,12 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "gap-tech-uturn-2-after-railway",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -912,25 +683,20 @@
           "svgId": "tech-uturn-tram",
           "videoDataKey": "tech-uturn-tram",
           "toNodeId": "gap-tech-uturn-1-after-railway",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
-          "label": "Проехать мимо (пока недоступен)",
+          "label": "Проехать мимо",
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "crossing-tech-kul-2",
-          "enabled": false,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -949,10 +715,7 @@
           "svgId": "ava-uturn-1",
           "videoDataKey": "ava-uturn-1",
           "toNodeId": "kul-ava-r-turn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -960,14 +723,12 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "crossing-ava-tul",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -986,22 +747,7 @@
           "svgId": "tech-tul-l-turn",
           "videoDataKey": "tech-tul-l-turn",
           "toNodeId": "crossing-tul-ava",
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
-        },
-        {
-          "id": "right",
-          "label": "Направо",
-          "maneuver": "right",
-          "svgId": "tech-tul-r-turn",
-          "videoDataKey": "tech-tul-r-turn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -1009,22 +755,20 @@
           "maneuver": "uturn",
           "svgId": "tech-tul-uturn",
           "videoDataKey": "tech-tul-uturn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "INCOMPLETE"
-          ]
+          "toNodeId": "gap-tech-uturn-2-before-railway",
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
       "id": "kauch-l-pril-turn",
       "type": "gap",
       "label": "Разворот с использованием прилегающей территории слева на ул. Каучуковая",
-      "approach": "Ехали по Каучуковой (к Авангардной)",
+      "approach": "Ехали по Каучуковой в сторону Крутовской",
       "mapFocus": {
         "svgId": "kauch-l-pril-turn"
       },
@@ -1035,36 +779,30 @@
           "maneuver": "uturn",
           "svgId": "kauch-l-pril-turn",
           "videoDataKey": "kauch-l-pril-turn",
-          "toNodeId": null,
-          "enabled": true,
-          "review": [
-            "GUESS",
-            "INCOMPLETE"
-          ]
+          "toNodeId": "crossing-mod-tech-2",
+          "enabled": true
         },
         {
           "id": "pass",
           "label": "Проехать мимо",
           "maneuver": "pass",
           "svgId": null,
-          "toNodeId": "crossing-kul-krut-from-kul",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "toNodeId": "crossing-kul-krut",
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
-      "id": "crossing-kul-krut-from-kul",
+      "id": "crossing-kul-krut",
       "type": "intersection",
       "label": "Кулагина × Крутовская",
       "approach": "Ехали по Кулагина",
       "mapFocus": {
-        "svgId": "kul-krut-l-turn"
+        "svgId": "kul-krut-uturn"
       },
       "actions": [
         {
@@ -1074,14 +812,12 @@
           "svgId": "kul-krut-uturn",
           "videoDataKey": "kul-krut-uturn",
           "toNodeId": "crossing-mod-tech-2",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -1100,10 +836,7 @@
           "svgId": "kul-ava-r-turn",
           "videoDataKey": "kul-ava-r-turn",
           "toNodeId": "crossing-ava-mod",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -1111,10 +844,7 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "crossing-kul-akt-2",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
@@ -1137,10 +867,7 @@
           "svgId": "tul-ava-l-turn",
           "videoDataKey": "tul-ava-l-turn",
           "toNodeId": "kul-ava-r-turn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -1149,14 +876,12 @@
           "svgId": "tul-ava-uturn",
           "videoDataKey": "tul-ava-uturn",
           "toNodeId": "crossing-tul-tech",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -1175,10 +900,7 @@
           "svgId": "tul-tech-r-turn",
           "videoDataKey": "tul-tech-r-turn",
           "toNodeId": "crossing-tech-kul-2",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "uturn",
@@ -1187,14 +909,12 @@
           "svgId": "tul-tech-uturn",
           "videoDataKey": "tul-tech-uturn",
           "toNodeId": "crossing-tul-ava",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -1213,10 +933,7 @@
           "svgId": "akt-mod-l-turn",
           "videoDataKey": "akt-mod-l-turn",
           "toNodeId": "end-autodrome",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "pass",
@@ -1224,14 +941,12 @@
           "maneuver": "pass",
           "svgId": null,
           "toNodeId": "crossing-akt-mod",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     },
     {
@@ -1250,10 +965,7 @@
           "svgId": "ava-tul-uturn",
           "videoDataKey": "ava-tul-uturn",
           "toNodeId": "kul-ava-r-turn",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         },
         {
           "id": "right",
@@ -1262,14 +974,12 @@
           "svgId": "ava-tul-r-turn",
           "videoDataKey": "ava-tul-r-turn",
           "toNodeId": "crossing-tul-tech",
-          "enabled": true,
-          "review": [
-            "VERIFY"
-          ]
+          "enabled": true
         }
       ],
       "review": [
-        "VERIFY"
+        "VERIFY",
+        "EXAM_RELEVANT"
       ]
     }
   ]
