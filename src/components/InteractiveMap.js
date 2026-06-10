@@ -3,6 +3,8 @@ import ControlPanel from './ControlPanel';
 import VideoPopup from './VideoPopup';
 import modelnayaSvgUrl from '../assets/modelnaya-raw.svg';
 import VideoData from '../assets/VideoData.json';
+import { clientToSvgPoint } from '../utils/routeGraphMarkup';
+import RouteGeometryPortal from './RouteGeometryPortal';
 
 // Centralized layer configuration
 const LAYER_CONFIG = {
@@ -15,7 +17,21 @@ const LAYER_CONFIG = {
   showUTurns: { svgSelector: '#u-turns' },
 };
 
-const InteractiveMap = () => {
+const MARKUP_PASS_THROUGH_SELECTORS = [
+  '#l-turns',
+  '#r-turns',
+  '#u-turns',
+  '#others',
+  '#ploshadka',
+];
+
+const InteractiveMap = ({
+  markupMode = false,
+  panMode = false,
+  onMarkupClick,
+  onMarkupMove,
+  markupOverlay = null,
+}) => {
   const [layers, setLayers] = useState({
     stopLimits: true,
     speedLimits: true,
@@ -39,11 +55,14 @@ const InteractiveMap = () => {
   const [lastTouchDistance, setLastTouchDistance] = useState(null);
   const [lastTouchCenter, setLastTouchCenter] = useState(null);
   const [svgContent, setSvgContent] = useState('');
+  const [mapSvgNode, setMapSvgNode] = useState(null);
   
   const svgRef = useRef(null);
   const containerRef = useRef(null);
   const svgContainerRef = useRef(null);
   const isCenteredRef = useRef(false);
+  const didDragRef = useRef(false);
+  const touchStartRef = useRef(null);
 
   // Load SVG content
   useEffect(() => {
@@ -83,12 +102,15 @@ const InteractiveMap = () => {
       svgElement = svgContainerRef.current.querySelector('svg');
       if (svgElement) {
         svgRef.current = svgElement;
+        setMapSvgNode(svgElement);
         setInteractiveElements(Object.keys(VideoData).map(elementId => 
           svgElement.querySelector(`#${elementId}`)
         ).filter(Boolean));
 
         // Set up event listeners after SVG is loaded
         const handleSvgClick = (e) => {
+          if (markupMode) return;
+
           let target = e.target;
           
           while (target && target !== svgElement) {
@@ -135,16 +157,17 @@ const InteractiveMap = () => {
           }
         };
         
-        svgElement.addEventListener('click', handleSvgClick);
-        svgElement.addEventListener('mouseover', handleSvgMouseOver);
-        svgElement.addEventListener('mouseout', handleSvgMouseOut);
+        if (!markupMode) {
+          svgElement.addEventListener('click', handleSvgClick);
+          svgElement.addEventListener('mouseover', handleSvgMouseOver);
+          svgElement.addEventListener('mouseout', handleSvgMouseOut);
 
-        // Store cleanup function
-        cleanup = () => {
-          svgElement.removeEventListener('click', handleSvgClick);
-          svgElement.removeEventListener('mouseover', handleSvgMouseOver);
-          svgElement.removeEventListener('mouseout', handleSvgMouseOut);
-        };
+          cleanup = () => {
+            svgElement.removeEventListener('click', handleSvgClick);
+            svgElement.removeEventListener('mouseover', handleSvgMouseOver);
+            svgElement.removeEventListener('mouseout', handleSvgMouseOut);
+          };
+        }
       }
     }, 0);
 
@@ -157,12 +180,13 @@ const InteractiveMap = () => {
         cleanup();
       }
     };
-  }, [svgContent]);
+  }, [svgContent, markupMode]);
 
   // Center map on desktop after SVG loads
   useEffect(() => {
     if (!svgContent) {
       isCenteredRef.current = false;
+      setMapSvgNode(null);
       return;
     }
     
@@ -196,32 +220,67 @@ const InteractiveMap = () => {
   }, [svgContent, transform.scale]);
 
   useEffect(() => {
-    if (svgRef.current) {
-      interactiveElements.forEach(element => {
-        if (element) {          
-          element.style.strokeWidth = '';
-          element.style.pointerEvents = 'all';
+    if (!svgRef.current) return;
+
+    interactiveElements.forEach((element) => {
+      if (element) {
+        element.style.strokeWidth = '';
+        element.style.pointerEvents = markupMode ? 'none' : 'all';
+        if (!markupMode) {
+          element.style.filter = 'none';
+          element.style.cursor = '';
         }
-      });
-    }
-  }, [interactiveElements]);
+      }
+    });
+
+    MARKUP_PASS_THROUGH_SELECTORS.forEach((selector) => {
+      const group = svgRef.current.querySelector(selector);
+      if (group) {
+        group.style.pointerEvents = markupMode ? 'none' : '';
+      }
+    });
+  }, [interactiveElements, markupMode, svgContent]);
   
 
+  const markupModifiers = (e) => ({ shiftKey: e.shiftKey });
+
+  const handleMarkupClick = useCallback((e) => {
+    if (!markupMode || panMode || !onMarkupClick || !svgRef.current) return;
+    if (didDragRef.current) return;
+    const point = clientToSvgPoint(svgRef.current, e.clientX, e.clientY);
+    if (point) onMarkupClick(point, markupModifiers(e));
+  }, [markupMode, panMode, onMarkupClick]);
+
+  const handleMarkupMove = useCallback((e) => {
+    if (!markupMode || panMode || !onMarkupMove || !svgRef.current) return;
+    const point = clientToSvgPoint(svgRef.current, e.clientX, e.clientY);
+    if (point) onMarkupMove(point, markupModifiers(e));
+  }, [markupMode, panMode, onMarkupMove]);
+
+  const handleMarkupLeave = useCallback(() => {
+    if (onMarkupMove) onMarkupMove(null, { shiftKey: false });
+  }, [onMarkupMove]);
+
   const handleMouseDown = (e) => {
+    if (markupMode && !panMode) return;
     if (e.target.closest('.interactive-element')) return;
+    didDragRef.current = false;
     setIsDragging(true);
     setDragStart({ x: e.clientX - transform.x, y: e.clientY - transform.y });
   };
 
   const handleMouseMove = useCallback((e) => {
     if (isDragging) {
+      didDragRef.current = true;
       setTransform(prev => ({
         ...prev,
         x: e.clientX - dragStart.x,
         y: e.clientY - dragStart.y
       }));
+    } else if (markupMode && !panMode) {
+      handleMarkupMove(e);
     }
-  }, [isDragging, dragStart]);
+  }, [isDragging, dragStart, markupMode, panMode, handleMarkupMove]);
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
@@ -271,13 +330,20 @@ const InteractiveMap = () => {
         y: center.y - rect.top
       });
     } else if (e.touches.length === 1) {
+      if (markupMode && !panMode) return;
       const touch = e.touches[0];
       if (!touch.target.closest('.interactive-element')) {
+        didDragRef.current = false;
+        touchStartRef.current = { x: touch.clientX, y: touch.clientY };
         setIsDragging(true);
         setDragStart({ x: touch.clientX - transform.x, y: touch.clientY - transform.y });
       }
+    } else if (markupMode && !panMode && e.touches.length === 1) {
+      const touch = e.touches[0];
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+      didDragRef.current = false;
     }
-  }, [transform.x, transform.y]);
+  }, [transform.x, transform.y, markupMode, panMode]);
 
   const handleTouchMove = useCallback((e) => {
     if (e.touches.length === 2) {
@@ -307,6 +373,7 @@ const InteractiveMap = () => {
       }
     } else if (e.touches.length === 1 && isDragging) {
       e.preventDefault();
+      didDragRef.current = true;
       const touch = e.touches[0];
       setTransform(prev => ({
         ...prev,
@@ -316,11 +383,31 @@ const InteractiveMap = () => {
     }
   }, [lastTouchDistance, lastTouchCenter, transform.scale, isDragging, dragStart]);
 
-  const handleTouchEnd = useCallback(() => {
+  const handleTouchEnd = useCallback((e) => {
+    if (
+      markupMode &&
+      !panMode &&
+      onMarkupClick &&
+      svgRef.current &&
+      touchStartRef.current &&
+      !didDragRef.current
+    ) {
+      const touch = e.changedTouches[0];
+      if (touch) {
+        const dx = touch.clientX - touchStartRef.current.x;
+        const dy = touch.clientY - touchStartRef.current.y;
+        if (Math.hypot(dx, dy) < 12) {
+          const point = clientToSvgPoint(svgRef.current, touch.clientX, touch.clientY);
+          if (point) onMarkupClick(point, { shiftKey: false });
+        }
+      }
+    }
+
     setIsDragging(false);
     setLastTouchDistance(null);
     setLastTouchCenter(null);
-  }, []);
+    touchStartRef.current = null;
+  }, [markupMode, panMode, onMarkupClick]);
 
 
   // Setup and cleanup effects
@@ -358,28 +445,44 @@ const InteractiveMap = () => {
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <ControlPanel 
-        layers={layers} 
-        onToggle={handleLayerToggle}
-        svgRef={svgRef}
-      />
+      {!markupMode && (
+        <ControlPanel 
+          layers={layers} 
+          onToggle={handleLayerToggle}
+          svgRef={svgRef}
+        />
+      )}
       
       <div 
         ref={containerRef}
         className="w-full h-full relative bg-gray-50"
         onMouseDown={handleMouseDown}
-        style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'none' }}
+        onClick={handleMarkupClick}
+        onMouseLeave={markupMode ? handleMarkupLeave : undefined}
+        style={{
+          cursor: markupMode && !panMode ? 'crosshair' : isDragging ? 'grabbing' : 'grab',
+          touchAction: 'none',
+        }}
       >
         {svgContent ? (
           <div
             ref={svgContainerRef}
-            className="svg-container w-full h-full transition-transform duration-100 ease-out" 
+            className="svg-container relative w-full h-full transition-transform duration-100 ease-out" 
             style={{
               transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale})`,
               transformOrigin: '0 0'
             }}
-            dangerouslySetInnerHTML={{ __html: svgContent }}
-          />
+          >
+            <div
+              className="w-full h-full [&>svg]:block [&>svg]:w-full [&>svg]:h-full"
+              dangerouslySetInnerHTML={{ __html: svgContent }}
+            />
+            {markupOverlay && mapSvgNode && (
+              <RouteGeometryPortal svgElement={mapSvgNode}>
+                {markupOverlay}
+              </RouteGeometryPortal>
+            )}
+          </div>
         ) : (
           <div className="flex items-center justify-center w-full h-full">
             <div className="text-gray-500">Загрузка карты...</div>
@@ -387,12 +490,14 @@ const InteractiveMap = () => {
         )}
       </div>
 
-      <VideoPopup
-        elementRef={selectedElement}
-        popup={popup}
-        isOpen={isPopupOpen}
-        setIsOpen={setIsPopupOpen}
-      />
+      {!markupMode && (
+        <VideoPopup
+          elementRef={selectedElement}
+          popup={popup}
+          isOpen={isPopupOpen}
+          setIsOpen={setIsPopupOpen}
+        />
+      )}
     </div>
   );
 };
